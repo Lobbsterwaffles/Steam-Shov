@@ -2,7 +2,7 @@ extends RigidBody2D
 
 @export var sheave: Node2D
 @export var myradius := 20.0
-@export var side := 1.0
+@export var side := -1.0
 
 @export var engine_speed := 76.0
 @export var clutch_force := 300000.0
@@ -127,11 +127,16 @@ func _bar(label: String, x: float, value: float, color: Color) -> void:
 	draw_string(font, base + Vector2(-label_size.x / 2, 13.0), label)
 
 func _draw() -> void:
+	var sl = to_local(sheave.global_position)
+	var qq = sheave.position + Vector2(0,0) # tangent_local
+	draw_circle(sl, myradius, Color.BLACK, false, 2)
+	draw_line(Vector2.ZERO, to_local(sheave.to_global(tangent_local)), Color.BLACK, 2)
+
+
 	draw_set_transform(Vector2.ZERO, -global_rotation, Vector2.ONE)
 
-	draw_line(Vector2.ZERO, forcedir * (j_total * 0.01), Color.RED, 3.0)
-	draw_line(Vector2.ZERO, forcedir * (v_along * 0.3), Color.GREEN, 2.0)
-
+	# draw_line(Vector2.ZERO, forcedir * (j_total * 0.01), Color.RED, 3.0)
+	# draw_line(Vector2.ZERO, forcedir * (v_along * 0.3), Color.GREEN, 2.0)
 
 	var x := 12.0
 
