@@ -5,8 +5,6 @@ var clock = 0
 
 @export var min_bite := 10.0
 
-var total_area := 0.0
-var area_capacity := 10000 # maybe should be derived from actual scoop area?
 
 func _ready():
 	body_entered.connect(_enter)
@@ -32,8 +30,7 @@ func _physics_process(dt):
 		return
 	clock = 0
 
-	if %door.carried_area >= area_capacity:
-		# print("Fullge")
+	if %door.is_full():
 		return
 	
 	var xf = %poly.global_transform.affine_inverse() * cutter.global_transform

@@ -3,6 +3,7 @@ extends RigidBody2D
 var pinjoint : PinJoint2D
 
 var carried_area := 0.0
+var area_capacity := 10000 # maybe should be derived from actual scoop area?
 
 var dumping := false
 
@@ -25,6 +26,8 @@ func _physics_process(dt):
 	
 	if dumping and carried_area > 0.0:
 		carried_area -= dirtbucket(2)
+		%bucket_gauge.value = 100.0 * (carried_area / area_capacity)
+
 
 	if carried_area < 0:
 		dumping = false
@@ -52,8 +55,11 @@ func polybody(points: PackedVector2Array) -> RigidBody2D:
 
 func add_dirt(area):
 	carried_area += area
-	
+	%bucket_gauge.value = 100.0 * (carried_area / area_capacity)
 
+func is_full():
+	return carried_area >= area_capacity
+	
 func power_law_size(smin: float, smax: float, power: float = 2.0) -> float:
 	var u := randf()
 	var a := 1.0 - power
