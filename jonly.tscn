@@ -1,12 +1,52 @@
 [gd_scene format=3 uid="uid://dnkoq8b8nhrnw"]
 
 [ext_resource type="Script" uid="uid://11jjkub0lvy6" path="res://crowd.gd" id="1_gna47"]
-[ext_resource type="Texture2D" uid="uid://hl27xikqb1ky" path="res://graphics/cabinwithguy.png" id="1_x3o0k"]
+[ext_resource type="Texture2D" uid="uid://oa2fperdll4b" path="res://graphics/guyframes/guyback.png" id="1_n6lhs"]
+[ext_resource type="Texture2D" uid="uid://cd0rk0fsf0ea4" path="res://graphics/cabin.png" id="1_x3o0k"]
 [ext_resource type="Texture2D" uid="uid://cs1iaoy440ccd" path="res://graphics/treads.png" id="2_7hugf"]
+[ext_resource type="Texture2D" uid="uid://dsg4vof78yimo" path="res://graphics/guyframes/guybofa.png" id="2_d1p8o"]
 [ext_resource type="Script" uid="uid://bkrblqg2pd1v2" path="res://scooply.gd" id="2_gna47"]
 [ext_resource type="Texture2D" uid="uid://bu3fswrx57vtp" path="res://graphics/stickonly.png" id="2_xlmbs"]
+[ext_resource type="Texture2D" uid="uid://2ixk6i1j1al2" path="res://graphics/guyframes/guyfront.png" id="3_7osxe"]
 [ext_resource type="Texture2D" uid="uid://b15vulb5tjrjn" path="res://graphics/boom.png" id="3_iiw48"]
 [ext_resource type="Texture2D" uid="uid://ex7ytbt4gryu" path="res://graphics/bucketonly.png" id="3_pu31i"]
+[ext_resource type="Script" uid="uid://bm8j5xi87nwi7" path="res://guysprite.gd" id="4_cohnp"]
+[ext_resource type="Texture2D" uid="uid://bxi58gr6x2dd4" path="res://graphics/guyframes/guynone.png" id="4_d1p8o"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3o0k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n6lhs")
+}],
+"loop": 1,
+"name": &"back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d1p8o")
+}],
+"loop": 1,
+"name": &"bofa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7osxe")
+}],
+"loop": 1,
+"name": &"front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_d1p8o")
+}],
+"loop": 1,
+"name": &"neither",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hchs4"]
 size = Vector2(65, 69)
@@ -46,21 +86,30 @@ position = Vector2(-493, 0)
 anchor_mode = 0
 zoom = Vector2(0.7, 0.7)
 
+[node name="guysprite" type="AnimatedSprite2D" parent="." unique_id=191935852]
+unique_name_in_owner = true
+position = Vector2(373, 133)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_x3o0k")
+animation = &"neither"
+frame_progress = 0.07813117
+script = ExtResource("4_cohnp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1501220923]
+position = Vector2(313, 166)
+scale = Vector2(0.8746667, 0.8746667)
+texture = ExtResource("1_x3o0k")
+flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1780811301]
+position = Vector2(-890.625, -4.5731716)
+texture = ExtResource("2_7hugf")
+
 [node name="baselink" type="StaticBody2D" parent="." unique_id=2073641110]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="baselink" unique_id=1832756638]
 position = Vector2(96, 408)
 shape = SubResource("RectangleShape2D_hchs4")
-
-[node name="Sprite2D" type="Sprite2D" parent="baselink/CollisionShape2D" unique_id=1501220923]
-position = Vector2(217, -242)
-scale = Vector2(0.8746667, 0.8746667)
-texture = ExtResource("1_x3o0k")
-flip_h = true
-
-[node name="Sprite2D" type="Sprite2D" parent="baselink/CollisionShape2D/Sprite2D" unique_id=1780811301]
-position = Vector2(-890.625, -4.5731716)
-texture = ExtResource("2_7hugf")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="baselink" unique_id=443912764]
 position = Vector2(96, 408)
