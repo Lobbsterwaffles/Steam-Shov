@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://diyq2pc5tmsc" path="res://cro2.gd" id="9_7osxe"]
 [ext_resource type="Script" uid="uid://fkgyplgl67sj" path="res://dirt.gd" id="13_7osxe"]
 [ext_resource type="Script" uid="uid://s5k4kh6anw86" path="res://door.gd" id="13_cohnp"]
+[ext_resource type="Script" uid="uid://hsvi8bao0mcw" path="res://eyes.gd" id="15_t3quf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3o0k"]
 animations = [{
@@ -270,4 +271,6 @@ offset_top = 32.0
 offset_right = -78.0
 offset_bottom = 69.5
 
-[node name="Node2D" type="Node2D" parent="." unique_id=929777961]
+[node name="eyes" type="Node2D" parent="." unique_id=1213992888]
+position = Vector2(72, 216)
+script = ExtResource("15_t3quf")
