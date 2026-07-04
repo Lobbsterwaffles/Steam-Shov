@@ -175,6 +175,7 @@ collision_mask = 7
 mass = 10.0
 inertia = 90.0
 can_sleep = false
+lock_rotation = true
 max_contacts_reported = 4
 angular_damp = 50.563
 script = ExtResource("2_gna47")
@@ -241,8 +242,8 @@ node_b = NodePath("../crowd/scoop")
 position = Vector2(347.0683, 40.516537)
 
 [node name="World" type="Area2D" parent="." unique_id=1708139545]
-collision_layer = 3855
-collision_mask = 3855
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("13_7osxe")
 
 [node name="poly" type="CollisionPolygon2D" parent="World" unique_id=596824375]
@@ -256,3 +257,7 @@ collision_mask = 1793
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="minecart" unique_id=1918100737]
 polygon = PackedVector2Array(-32, -64, -24, 40, 120, 40, 144, -64, 136, -64, 112, 32, -16, 32, -24, -64)
+
+[node name="dirtparent" type="Node2D" parent="." unique_id=2089694070]
+unique_name_in_owner = true
+position = Vector2(232, 584)

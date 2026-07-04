@@ -2,6 +2,11 @@ extends RigidBody2D
 
 var pinjoint : PinJoint2D
 
+var carried_area := 0.0
+
+var dumping := false
+
+
 func _physics_process(dt):
 	if Input.is_key_pressed(KEY_T):
 		if pinjoint:
@@ -14,9 +19,16 @@ func _physics_process(dt):
 		self.freeze = false
 		add_child(pinjoint)
 
+	print("Carry ", carried_area)
 	if Input.is_key_pressed(KEY_B):
-		dirtbucket()
+		dumping = true
+	
+	if dumping and carried_area > 0.0:
+		carried_area -= dirtbucket(2)
 
+	if carried_area < 0:
+		dumping = false
+		carried_area = 0
 		
 func random_poly(n: int, r1: float, r2: float, jitter: float = 0.0) -> PackedVector2Array:
 	var points := PackedVector2Array()
@@ -51,12 +63,19 @@ func cluster_points(count: int, half: Vector2) -> PackedVector2Array:
 		points.append(Vector2(randf_range(-half.x, half.x), randf_range(-half.y, half.y)))
 	return points
 
-func dirtbucket():
-	for center in cluster_points(2, Vector2(28, 28)):
+func dirtbucket(n):
+	var parent := %dirtparent as Node2D
+	var approx_area := 0.0
+	for center in cluster_points(n, Vector2(28, 28)):
 		var r2 := power_law_size(10, 20, 2.5)
 		var r1 := r2 * randf_range(0.4, 0.8)
+		var rm := 0.5 * (r1 + r2)
 		var body := polybody(random_poly(12, r1, r2))
-		body.position = center
-		body.mass = r2 * r2
-		add_child(body)	
+		var area := 0.5 * PI * rm * rm
+		approx_area += area
+		body.mass = area
+		print("A ", area)
+		body.position = parent.to_local(%scoop.to_global(center))
+		parent.add_child(body)
+	return approx_area
 	

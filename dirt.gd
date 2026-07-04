@@ -42,7 +42,7 @@ func _physics_process(dt):
 		return
 
 	total_area += isectA
-	print(" tA ", total_area)
+	%door.carried_area += isectA
 
 	var clips = Geometry2D.clip_polygons(%poly.polygon, localcut)
 	if clips.is_empty():
