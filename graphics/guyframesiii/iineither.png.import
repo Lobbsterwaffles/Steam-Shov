@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvmtuat5e7t43"
-path="res://.godot/imported/iback.png-2a1004d215f7482c71eb34ee4e5d810b.ctex"
+uid="uid://iun3x2orsgdr"
+path="res://.godot/imported/iineither.png-c68dc7d50b41b9f5023eaff1b66ac9d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/guyframesnoEye/iback.png"
-dest_files=["res://.godot/imported/iback.png-2a1004d215f7482c71eb34ee4e5d810b.ctex"]
+source_file="res://graphics/guyframesiii/iineither.png"
+dest_files=["res://.godot/imported/iineither.png-c68dc7d50b41b9f5023eaff1b66ac9d5.ctex"]
 
 [params]
 

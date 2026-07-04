@@ -1,23 +1,24 @@
 [gd_scene format=3 uid="uid://dnkoq8b8nhrnw"]
 
-[ext_resource type="Texture2D" uid="uid://bvmtuat5e7t43" path="res://graphics/guyframesnoEye/iback.png" id="1_cohnp"]
 [ext_resource type="Shader" uid="uid://b3721yt4sxkjv" path="res://scroll.gdshader" id="1_ma3ou"]
 [ext_resource type="Texture2D" uid="uid://cd0rk0fsf0ea4" path="res://graphics/cabin.png" id="1_x3o0k"]
 [ext_resource type="Texture2D" uid="uid://dy2jjh1f5uq28" path="res://graphics/clouds.png" id="2_1gxae"]
 [ext_resource type="Texture2D" uid="uid://cs1iaoy440ccd" path="res://graphics/treads.png" id="2_7hugf"]
 [ext_resource type="Script" uid="uid://bkrblqg2pd1v2" path="res://scooply.gd" id="2_gna47"]
-[ext_resource type="Texture2D" uid="uid://b7ahiwhgqrgf7" path="res://graphics/guyframesnoEye/ibofa.png" id="2_t3quf"]
 [ext_resource type="Texture2D" uid="uid://bu3fswrx57vtp" path="res://graphics/stickonly.png" id="2_xlmbs"]
+[ext_resource type="Texture2D" uid="uid://dtcucnsf57spj" path="res://graphics/guyframesiii/iiback.png" id="3_1gxae"]
 [ext_resource type="Texture2D" uid="uid://b15vulb5tjrjn" path="res://graphics/boom.png" id="3_iiw48"]
-[ext_resource type="Texture2D" uid="uid://b6t7snsc2y2bf" path="res://graphics/guyframesnoEye/ifront.png" id="3_l1bqw"]
 [ext_resource type="Texture2D" uid="uid://ex7ytbt4gryu" path="res://graphics/bucketonly.png" id="3_pu31i"]
 [ext_resource type="Script" uid="uid://bm8j5xi87nwi7" path="res://guysprite.gd" id="4_cohnp"]
-[ext_resource type="Texture2D" uid="uid://b5hhmaoi3ex1f" path="res://graphics/guyframesnoEye/ineither.png" id="4_ma3ou"]
+[ext_resource type="Texture2D" uid="uid://gilcykkrjqhe" path="res://graphics/guyframesiii/iibofa.png" id="4_oeujs"]
+[ext_resource type="Texture2D" uid="uid://bwunvi0226mvx" path="res://graphics/guyframesiii/iifront.png" id="5_n0lup"]
+[ext_resource type="Texture2D" uid="uid://iun3x2orsgdr" path="res://graphics/guyframesiii/iineither.png" id="6_qye30"]
 [ext_resource type="Texture2D" uid="uid://cxpjfwba387uu" path="res://graphics/catma.png" id="8_t3quf"]
 [ext_resource type="Script" uid="uid://diyq2pc5tmsc" path="res://cro2.gd" id="9_7osxe"]
 [ext_resource type="Script" uid="uid://fkgyplgl67sj" path="res://dirt.gd" id="13_7osxe"]
 [ext_resource type="Script" uid="uid://s5k4kh6anw86" path="res://door.gd" id="13_cohnp"]
 [ext_resource type="Script" uid="uid://hsvi8bao0mcw" path="res://eyes.gd" id="15_t3quf"]
+[ext_resource type="Texture2D" uid="uid://de0o37vvkshp7" path="res://graphics/minecart.png" id="18_oeujs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
@@ -26,7 +27,7 @@ shader = ExtResource("1_ma3ou")
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_cohnp")
+"texture": ExtResource("3_1gxae")
 }],
 "loop": 1,
 "name": &"back",
@@ -34,7 +35,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_t3quf")
+"texture": ExtResource("4_oeujs")
 }],
 "loop": 1,
 "name": &"bofa",
@@ -42,7 +43,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_l1bqw")
+"texture": ExtResource("5_n0lup")
 }],
 "loop": 1,
 "name": &"front",
@@ -50,7 +51,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_ma3ou")
+"texture": ExtResource("6_qye30")
 }],
 "loop": 1,
 "name": &"neither",
@@ -121,7 +122,7 @@ position = Vector2(376, 136)
 rotation = -3.1415927
 scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_x3o0k")
-animation = &"neither"
+animation = &"back"
 script = ExtResource("4_cohnp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1501220923]
@@ -284,8 +285,13 @@ position = Vector2(232, 584)
 collision_layer = 1793
 collision_mask = 1793
 
+[node name="Sprite2D" type="Sprite2D" parent="minecart" unique_id=1116190903]
+position = Vector2(173.00003, -318)
+scale = Vector2(0.555, 0.555)
+texture = ExtResource("18_oeujs")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="minecart" unique_id=1918100737]
-polygon = PackedVector2Array(-32, -64, -24, 40, 120, 40, 144, -64, 136, -64, 112, 32, -16, 32, -24, -64)
+polygon = PackedVector2Array(-38, -61, 9, 39, 141, 38, 144, -64, 136, -64, 134, 32, 16, 31, -26, -61)
 
 [node name="dirtparent" type="Node2D" parent="." unique_id=2089694070]
 unique_name_in_owner = true
@@ -299,5 +305,5 @@ offset_right = -78.0
 offset_bottom = 69.5
 
 [node name="eyes" type="Node2D" parent="." unique_id=1213992888]
-position = Vector2(72, 216)
+position = Vector2(-29, 216)
 script = ExtResource("15_t3quf")

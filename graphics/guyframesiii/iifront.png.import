@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5hhmaoi3ex1f"
-path="res://.godot/imported/ineither.png-a335755b3f6f1a078b23cf85f78bf527.ctex"
+uid="uid://bwunvi0226mvx"
+path="res://.godot/imported/iifront.png-361ed5cc6c3f6f91bf727df084163114.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/guyframesnoEye/ineither.png"
-dest_files=["res://.godot/imported/ineither.png-a335755b3f6f1a078b23cf85f78bf527.ctex"]
+source_file="res://graphics/guyframesiii/iifront.png"
+dest_files=["res://.godot/imported/iifront.png-361ed5cc6c3f6f91bf727df084163114.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2ixk6i1j1al2"
-path="res://.godot/imported/guyfront.png-d807588c2d7bd13fab165347bde7c903.ctex"
+uid="uid://de0o37vvkshp7"
+path="res://.godot/imported/minecart.png-dc308103ff574d5b8c160e287cd49a61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/guyframes/guyfront.png"
-dest_files=["res://.godot/imported/guyfront.png-d807588c2d7bd13fab165347bde7c903.ctex"]
+source_file="res://graphics/minecart.png"
+dest_files=["res://.godot/imported/minecart.png-dc308103ff574d5b8c160e287cd49a61.ctex"]
 
 [params]
 

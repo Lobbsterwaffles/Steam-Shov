@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxi58gr6x2dd4"
-path="res://.godot/imported/guynone.png-57538391b04c80d6aca98331b09e4a91.ctex"
+uid="uid://dtcucnsf57spj"
+path="res://.godot/imported/iiback.png-9983a3b0e14df01e75269a32da31755b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/guyframes/guynone.png"
-dest_files=["res://.godot/imported/guynone.png-57538391b04c80d6aca98331b09e4a91.ctex"]
+source_file="res://graphics/guyframesiii/iiback.png"
+dest_files=["res://.godot/imported/iiback.png-9983a3b0e14df01e75269a32da31755b.ctex"]
 
 [params]
 
