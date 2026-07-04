@@ -49,6 +49,9 @@ func _ready() -> void:
 		brake_anchor = length
 	queue_redraw()
 
+	# body_entered.connect(_on_body_entered)
+
+
 func _tangent(pa: Vector2, s: float) -> Vector2:
 	var alpha := acos(myradius / pa.length())
 	return myradius * Vector2.from_angle(pa.angle() + s * alpha)
