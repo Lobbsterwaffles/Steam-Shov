@@ -1,22 +1,33 @@
 extends Area2D
 
-var polygonge
+var cutter
+var clock = 0
 
 func _ready():
-	print("Sugme")
-	body_entered.connect(_ae)
+	body_entered.connect(_enter)
+	body_exited.connect(_exit)
 
-func _ae(other):
-	print("AE ", other)
-	print(other.get_node("%scoopshape"))
-	queue_redraw()
-	var shape = other.get_node("%scoopshape")
-	var gpoly = Transform2D(0, shape.global_position) * shape.polygon
-	var clips = Geometry2D.clip_polygons(%poly.polygon, gpoly)
-	polygonge = clips[0]
-	%poly.set_deferred("polygon", clips[0])
-	
-func _draw():
-	if polygonge == null:
+func _enter(other):
+	var scoop = other.get_node("%scoopshape")
+	if not scoop:
 		return
-	draw_colored_polygon(polygonge, Color.BLUE)
+	cutter = scoop
+
+func _exit(other):
+	var scoop = other.get_node("%scoopshape")
+	if not scoop:
+		return
+	
+func _physics_process(dt):
+	if not cutter:
+		clock = 0
+		return
+	clock += dt 
+	if clock < 0.2:
+		return
+	clock = 0
+	var xf = %poly.global_transform.affine_inverse() * cutter.global_transform
+	var clips = Geometry2D.clip_polygons(%poly.polygon, xf * cutter.polygon)
+	if clips.is_empty():
+		return
+	%poly.set_deferred("polygon", clips[0])

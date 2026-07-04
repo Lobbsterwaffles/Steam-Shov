@@ -137,13 +137,9 @@ texture = ExtResource("3_pu31i")
 position = Vector2(-3.5825195, 0.50842285)
 shape = SubResource("RectangleShape2D_gna47")
 
-[node name="OLDscoopshape" type="CollisionPolygon2D" parent="crowd/scoop" unique_id=2115337509]
+[node name="scoopshape" type="CollisionPolygon2D" parent="crowd/scoop" unique_id=2115337509]
 unique_name_in_owner = true
-polygon = PackedVector2Array(37.727417, -97.367645, 40.10431, 41.490936, -44.899475, 42.38684, -45.83954, -42.366455, -16.105164, -42.547424)
-
-[node name="scoopshape" type="CollisionPolygon2D" parent="crowd/scoop" unique_id=158109762]
-unique_name_in_owner = true
-polygon = PackedVector2Array(23.666992, -105.31134, 100.25366, 26.333649, -21.972717, 113.75183, -128.71338, 21.564636, -84.295654, -132.43993)
+polygon = PackedVector2Array(37.727417, -97.367645, 40.10431, 41.490936, -44.899475, 42.38684, -45.83954, -42.366455, -23.602234, -73.49231)
 
 [node name="j_crowd_sliderblock" type="GrooveJoint2D" parent="crowd" unique_id=1877799415]
 unique_name_in_owner = true
