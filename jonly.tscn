@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bxi58gr6x2dd4" path="res://graphics/guyframes/guynone.png" id="4_d1p8o"]
 [ext_resource type="Script" uid="uid://diyq2pc5tmsc" path="res://cro2.gd" id="9_7osxe"]
 [ext_resource type="Script" uid="uid://fkgyplgl67sj" path="res://dirt.gd" id="13_7osxe"]
+[ext_resource type="Script" uid="uid://s5k4kh6anw86" path="res://door.gd" id="13_cohnp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3o0k"]
 animations = [{
@@ -79,6 +80,9 @@ point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gna47"]
 size = Vector2(84.627, 85.11789)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpitp"]
+size = Vector2(82.823425, 20)
 
 [node name="Node2D" type="Node2D" unique_id=1108412309]
 
@@ -164,15 +168,15 @@ scale = Vector2(0.5462722, 0.5462722)
 texture = ExtResource("2_xlmbs")
 
 [node name="scoop" type="RigidBody2D" parent="crowd" unique_id=1575059163 node_paths=PackedStringArray("sheave")]
+unique_name_in_owner = true
 position = Vector2(215.47882, 0.5428772)
 collision_layer = 6
 collision_mask = 7
 mass = 10.0
-center_of_mass_mode = 1
-center_of_mass = Vector2(0, 70.6)
+inertia = 90.0
 can_sleep = false
 max_contacts_reported = 4
-angular_damp = 2.0
+angular_damp = 50.563
 script = ExtResource("2_gna47")
 sheave = NodePath("../../w")
 clutch_press_curve = SubResource("Curve_pu31i")
@@ -194,6 +198,24 @@ shape = SubResource("RectangleShape2D_gna47")
 [node name="scoopshape" type="CollisionPolygon2D" parent="crowd/scoop" unique_id=2115337509]
 unique_name_in_owner = true
 polygon = PackedVector2Array(37.727417, -97.367645, 40.10431, 41.490936, -44.899475, 42.38684, -45.83954, -42.366455, -23.602234, -73.49231)
+
+[node name="door" type="RigidBody2D" parent="crowd/scoop" unique_id=1328115678]
+unique_name_in_owner = true
+position = Vector2(-2.22822, 32.032864)
+collision_layer = 0
+collision_mask = 0
+mass = 2.0
+freeze = true
+script = ExtResource("13_cohnp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crowd/scoop/door" unique_id=1370933620]
+shape = SubResource("RectangleShape2D_xpitp")
+
+[node name="hingemarker" type="Marker2D" parent="crowd/scoop/door" unique_id=1787923017]
+unique_name_in_owner = true
+position = Vector2(-31.026855, 0.11706543)
+rotation = 2.5307274
+scale = Vector2(1, -1)
 
 [node name="j_crowd_sliderblock" type="GrooveJoint2D" parent="crowd" unique_id=1877799415]
 unique_name_in_owner = true

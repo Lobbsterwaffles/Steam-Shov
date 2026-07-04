@@ -114,6 +114,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 	j_total = j_clutch + j_brake
 
+	state.apply_force(Vector2(0, 100), Vector2(0, 40))
+
 	if j_total > 0.0:
 		state.apply_central_impulse(j_total * forcedir)
 

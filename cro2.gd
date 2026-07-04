@@ -19,7 +19,7 @@ func pin():
 	if pinjoint:
 		return
 	pinjoint = PinJoint2D.new()
-	pinjoint.global_position = to_local(%sliderblock.global_position)
+	pinjoint.position = to_local(%sliderblock.global_position)
 	pinjoint.node_a = self.get_path()
 	pinjoint.node_b = %arm.get_path()
 	add_child(pinjoint)
