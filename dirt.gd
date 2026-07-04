@@ -31,8 +31,9 @@ func _physics_process(dt):
 	if clock < 0.2:
 		return
 	clock = 0
-	if total_area >= area_capacity:
-		print("Fullge")
+
+	if %door.carried_area >= area_capacity:
+		# print("Fullge")
 		return
 	
 	var xf = %poly.global_transform.affine_inverse() * cutter.global_transform
@@ -41,7 +42,6 @@ func _physics_process(dt):
 	if isectA < min_bite:
 		return
 
-	total_area += isectA
 	%door.carried_area += isectA
 
 	var clips = Geometry2D.clip_polygons(%poly.polygon, localcut)

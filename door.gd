@@ -19,7 +19,7 @@ func _physics_process(dt):
 		self.freeze = false
 		add_child(pinjoint)
 
-	print("Carry ", carried_area)
+	# print("Carry ", carried_area)
 	if Input.is_key_pressed(KEY_B):
 		dumping = true
 	
