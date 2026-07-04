@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+@export var drive_force := 9000.0
+
 var forcedir : Vector2
 var pinjoint : PinJoint2D
 var clutch_phase := 0.0
@@ -20,7 +22,6 @@ func pin():
 	pinjoint.global_position = to_local(%sliderblock.global_position)
 	pinjoint.node_a = self.get_path()
 	pinjoint.node_b = %arm.get_path()
-	# pinjoint.tree_exiting.connect(pinjoint.queue_free)
 	add_child(pinjoint)
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
@@ -43,7 +44,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	else:
 		clutch_phase = 0
 		
-	forcedir *= 9000 * clutch_phase
+	forcedir *= drive_force * clutch_phase
 	state.apply_central_force(forcedir)
 
 
@@ -56,13 +57,8 @@ func _input(ev):
 
 func _draw():
 	draw_circle(Vector2.ZERO, 10, Color.RED)
-	# World-aligned frame: cancel body rotation so world vectors draw correctly.
 	draw_set_transform_matrix(get_global_transform().affine_inverse())
 	var g := global_position
-	# if pinjoint:
-	# 	var g := global_position
-	# 	draw_line(g, pinjoint.global_position, Color.BLUE, 12.0)
-
 
 	if forcedir.length() > 0.1:
 		draw_line(g,  g + 0.004*forcedir, Color.GREEN, 8.0)
