@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dnkoq8b8nhrnw"]
 
-[ext_resource type="Script" uid="uid://11jjkub0lvy6" path="res://crowd.gd" id="1_gna47"]
 [ext_resource type="Texture2D" uid="uid://oa2fperdll4b" path="res://graphics/guyframes/guyback.png" id="1_n6lhs"]
 [ext_resource type="Texture2D" uid="uid://cd0rk0fsf0ea4" path="res://graphics/cabin.png" id="1_x3o0k"]
 [ext_resource type="Texture2D" uid="uid://cs1iaoy440ccd" path="res://graphics/treads.png" id="2_7hugf"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ex7ytbt4gryu" path="res://graphics/bucketonly.png" id="3_pu31i"]
 [ext_resource type="Script" uid="uid://bm8j5xi87nwi7" path="res://guysprite.gd" id="4_cohnp"]
 [ext_resource type="Texture2D" uid="uid://bxi58gr6x2dd4" path="res://graphics/guyframes/guynone.png" id="4_d1p8o"]
+[ext_resource type="Script" uid="uid://diyq2pc5tmsc" path="res://cro2.gd" id="9_7osxe"]
 [ext_resource type="Script" uid="uid://fkgyplgl67sj" path="res://dirt.gd" id="13_7osxe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3o0k"]
@@ -118,6 +118,7 @@ node_a = NodePath("..")
 node_b = NodePath("../../arm")
 
 [node name="arm" type="RigidBody2D" parent="." unique_id=378534728]
+unique_name_in_owner = true
 position = Vector2(216, 240)
 rotation = -0.9599311
 collision_layer = 2
@@ -129,12 +130,14 @@ position = Vector2(0, -2.90979)
 shape = SubResource("RectangleShape2D_yeuc0")
 
 [node name="Sprite2D" type="Sprite2D" parent="arm/CollisionShape2D" unique_id=708914638]
+modulate = Color(1, 1, 1, 0.40784314)
 position = Vector2(71.5203, 12.648678)
 rotation = -0.7853982
 scale = Vector2(0.45107174, 0.45107174)
 texture = ExtResource("3_iiw48")
 
 [node name="sliderblock" type="RigidBody2D" parent="." unique_id=760491689]
+unique_name_in_owner = true
 position = Vector2(235, 207)
 rotation = -0.9599311
 collision_layer = 0
@@ -148,12 +151,13 @@ shape = SubResource("RectangleShape2D_75g0j")
 position = Vector2(309, 258)
 rotation = 0.61086524
 collision_layer = 0
-script = ExtResource("1_gna47")
+script = ExtResource("9_7osxe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="crowd" unique_id=283825240]
 shape = SubResource("RectangleShape2D_dxtb6")
 
 [node name="Sprite2D" type="Sprite2D" parent="crowd/CollisionShape2D" unique_id=832757463]
+modulate = Color(1, 1, 1, 0.24705882)
 position = Vector2(-197.2818, -88.720215)
 rotation = -2.6179938
 scale = Vector2(0.5462722, 0.5462722)
@@ -177,6 +181,7 @@ clutch_release_curve = SubResource("Curve_1wo7n")
 brake_release_curve = SubResource("Curve_t5dwq")
 
 [node name="Sprite2D" type="Sprite2D" parent="crowd/scoop" unique_id=1383584872]
+modulate = Color(1, 1, 1, 0.5176471)
 position = Vector2(-339.74298, 83.011154)
 rotation = -0.5462881
 scale = Vector2(-0.438, 0.438)

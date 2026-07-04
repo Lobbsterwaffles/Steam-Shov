@@ -1,0 +1,72 @@
+extends RigidBody2D
+
+var forcedir : Vector2
+var pinjoint : PinJoint2D
+var clutch_phase := 0.0
+const CLUTCH_PRESS_T := 0.23
+
+func _ready() -> void:
+	_update_geometry()
+	queue_redraw()
+
+func _update_geometry() -> void:
+	var j := %j_crowd_sliderblock as Node2D
+	var slider := %sliderblock as Node2D
+
+func pin():
+	if pinjoint:
+		return
+	pinjoint = PinJoint2D.new()
+	pinjoint.global_position = to_local(%sliderblock.global_position)
+	pinjoint.node_a = self.get_path()
+	pinjoint.node_b = %arm.get_path()
+	# pinjoint.tree_exiting.connect(pinjoint.queue_free)
+	add_child(pinjoint)
+
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	var dt := state.step
+	_update_geometry()
+	queue_redraw()
+	if pinjoint:
+		forcedir = Vector2.ZERO
+	else:
+		forcedir = (%j_crowd_sliderblock.global_position - %sliderblock.global_position).normalized()
+
+	if Input.is_action_pressed("crowd_in"):
+		if clutch_phase > 0:
+			clutch_phase = 0
+		clutch_phase = move_toward(clutch_phase, -1, dt / CLUTCH_PRESS_T)
+	elif Input.is_action_pressed("crowd_out"):
+		if clutch_phase < 0:
+			clutch_phase = 0
+		clutch_phase = move_toward(clutch_phase, 1, dt / CLUTCH_PRESS_T)
+	else:
+		clutch_phase = 0
+		
+	forcedir *= 9000 * clutch_phase
+	state.apply_central_force(forcedir)
+
+
+func _input(ev):
+	if Input.is_key_pressed(KEY_C):
+		pin()
+	else:
+		if pinjoint:
+			pinjoint.queue_free()
+
+func _draw():
+	draw_circle(Vector2.ZERO, 10, Color.RED)
+	# World-aligned frame: cancel body rotation so world vectors draw correctly.
+	draw_set_transform_matrix(get_global_transform().affine_inverse())
+	var g := global_position
+	# if pinjoint:
+	# 	var g := global_position
+	# 	draw_line(g, pinjoint.global_position, Color.BLUE, 12.0)
+
+
+	if forcedir.length() > 0.1:
+		draw_line(g,  g + 0.004*forcedir, Color.GREEN, 8.0)
+
+
+		
+	

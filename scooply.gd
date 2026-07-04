@@ -134,24 +134,22 @@ func _draw() -> void:
 	var qq = sheave.position + Vector2(0,0) # tangent_local
 	draw_circle(sl, myradius, Color.BLACK, false, 2)
 	draw_line(Vector2.ZERO, to_local(sheave.to_global(tangent_local)), Color.BLACK, 2)
+	# draw_line(Vector2.ZERO, to_local(sheave.global_position), Color.BLACK, 2)
 
-
-	draw_set_transform(Vector2.ZERO, -global_rotation, Vector2.ONE)
+	draw_set_transform(to_local(sheave.global_position), -global_rotation, Vector2.ONE)
 
 	draw_line(Vector2.ZERO, forcedir * (j_total * 0.01), Color.RED, 3.0)
 	draw_line(Vector2.ZERO, forcedir * (v_along * 0.3), Color.GREEN, 2.0)
-
-	var x := 12.0
-
+	var x := 52.0
 	_bar("C", x, clutch_amount, Color.RED)
 	x += 10.0
 	_bar("B", x, brake_amount, Color.GREEN)
 	x += 10.0
 	_bar("L", x, brake_lock_amount, Color.CYAN)
 	x += 10.0
-	_bar("c", x, j_brake * 1e-3, Color.YELLOW)
+	_bar("c", x, j_clutch * 1e-3, Color.YELLOW)
 	x += 10.0
-	_bar("b", x, j_clutch * 1e-3, Color.ORANGE)
+	_bar("b", x, j_brake * 1e-3, Color.ORANGE)
 	x += 10.0
 	
 	

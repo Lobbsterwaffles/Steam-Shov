@@ -31,3 +31,7 @@ func _physics_process(dt):
 	if clips.is_empty():
 		return
 	%poly.set_deferred("polygon", clips[0])
+	queue_redraw()
+
+func _draw():
+	draw_colored_polygon(%poly.polygon, Color.BLACK)
