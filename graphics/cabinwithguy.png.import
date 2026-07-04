@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brn0pr1w44gn0"
-path="res://.godot/imported/cabin.png-6aac0f01df08c4b32f7713953abaaf92.ctex"
+uid="uid://hl27xikqb1ky"
+path="res://.godot/imported/cabinwithguy.png-892ca2b95212e5027b5c47cbe98ec2f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/cabin.png"
-dest_files=["res://.godot/imported/cabin.png-6aac0f01df08c4b32f7713953abaaf92.ctex"]
+source_file="res://graphics/cabinwithguy.png"
+dest_files=["res://.godot/imported/cabinwithguy.png-892ca2b95212e5027b5c47cbe98ec2f4.ctex"]
 
 [params]
 

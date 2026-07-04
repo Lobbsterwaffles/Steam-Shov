@@ -150,3 +150,5 @@ func _draw() -> void:
 	x += 10.0
 	_bar("b", x, j_clutch * 1e-3, Color.ORANGE)
 	x += 10.0
+	
+	
