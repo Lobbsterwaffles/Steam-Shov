@@ -64,7 +64,7 @@ func _update_geometry(world_pos: Vector2) -> void:
 	forcedir = (tangent_world - world_pos).normalized()
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
-	var dt := state.step
+	var dt = state.step
 
 	_update_geometry(state.transform.origin)
 	v_along = state.linear_velocity.dot(forcedir)
@@ -135,8 +135,8 @@ func _draw() -> void:
 
 	draw_set_transform(Vector2.ZERO, -global_rotation, Vector2.ONE)
 
-	# draw_line(Vector2.ZERO, forcedir * (j_total * 0.01), Color.RED, 3.0)
-	# draw_line(Vector2.ZERO, forcedir * (v_along * 0.3), Color.GREEN, 2.0)
+	draw_line(Vector2.ZERO, forcedir * (j_total * 0.01), Color.RED, 3.0)
+	draw_line(Vector2.ZERO, forcedir * (v_along * 0.3), Color.GREEN, 2.0)
 
 	var x := 12.0
 

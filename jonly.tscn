@@ -37,12 +37,14 @@ _data = [Vector2(0, 0.5021425), 0.0, -4.8952966, 0, 0, Vector2(0.2514793, 0), 0.
 point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gna47"]
-size = Vector2(85.58722, 29.195251)
+size = Vector2(84.627, 85.11789)
 
 [node name="Node2D" type="Node2D" unique_id=1108412309]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=730885849]
+position = Vector2(-493, 0)
 anchor_mode = 0
+zoom = Vector2(0.7, 0.7)
 
 [node name="baselink" type="StaticBody2D" parent="." unique_id=2073641110]
 
@@ -68,15 +70,16 @@ node_b = NodePath("../../arm")
 [node name="arm" type="RigidBody2D" parent="." unique_id=378534728]
 position = Vector2(216, 240)
 rotation = -0.9599311
-collision_layer = 0
+collision_layer = 2
+collision_mask = 3
 lock_rotation = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="arm" unique_id=1124704110]
-position = Vector2(7.6293945e-06, -2.9096985)
+position = Vector2(0, -2.90979)
 shape = SubResource("RectangleShape2D_yeuc0")
 
 [node name="Sprite2D" type="Sprite2D" parent="arm/CollisionShape2D" unique_id=708914638]
-position = Vector2(42.68343, 13.308005)
+position = Vector2(71.5203, 12.648678)
 rotation = -0.7853982
 scale = Vector2(0.45107174, 0.45107174)
 texture = ExtResource("3_iiw48")
@@ -101,18 +104,20 @@ script = ExtResource("1_gna47")
 shape = SubResource("RectangleShape2D_dxtb6")
 
 [node name="Sprite2D" type="Sprite2D" parent="crowd/CollisionShape2D" unique_id=832757463]
-position = Vector2(-225.29951, -88.63439)
+position = Vector2(-197.2818, -88.720215)
 rotation = -2.6179938
 scale = Vector2(0.5462722, 0.5462722)
 texture = ExtResource("2_xlmbs")
 
 [node name="scoop" type="RigidBody2D" parent="crowd" unique_id=1575059163 node_paths=PackedStringArray("sheave")]
 position = Vector2(215.47882, 0.5428772)
-rotation = -1.5707964
-collision_layer = 0
-mass = 24.0
+collision_layer = 2
+collision_mask = 3
+mass = 10.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 70.6)
 can_sleep = false
-linear_damp = 1.0
+angular_damp = 2.0
 script = ExtResource("2_gna47")
 sheave = NodePath("../../w")
 clutch_press_curve = SubResource("Curve_pu31i")
@@ -120,16 +125,18 @@ brake_press_curve = SubResource("Curve_xlmbs")
 clutch_release_curve = SubResource("Curve_1wo7n")
 brake_release_curve = SubResource("Curve_t5dwq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="crowd/scoop" unique_id=1135683899]
-shape = SubResource("RectangleShape2D_gna47")
-
-[node name="Sprite2D" type="Sprite2D" parent="crowd/scoop/CollisionShape2D" unique_id=1383584872]
-position = Vector2(75.91622, -365.571)
-rotation = -1.0471976
-scale = Vector2(0.43758056, 0.4375805)
+[node name="Sprite2D" type="Sprite2D" parent="crowd/scoop" unique_id=1383584872]
+position = Vector2(-339.74298, 83.011154)
+rotation = -0.5462881
+scale = Vector2(-0.438, 0.438)
 texture = ExtResource("3_pu31i")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crowd/scoop" unique_id=1135683899]
+position = Vector2(-3.5825195, 0.50842285)
+shape = SubResource("RectangleShape2D_gna47")
+
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="crowd/scoop" unique_id=1164235623]
+visible = false
 
 [node name="j_crowd_sliderblock" type="GrooveJoint2D" parent="crowd" unique_id=1877799415]
 unique_name_in_owner = true
@@ -139,7 +146,7 @@ scale = Vector2(0.99999994, 0.99999994)
 node_a = NodePath("..")
 node_b = NodePath("../../sliderblock")
 length = 400.0
-initial_offset = 375.0
+initial_offset = 377.0
 
 [node name="j_arm_sliderblock" type="PinJoint2D" parent="." unique_id=131223294]
 position = Vector2(235, 207)
