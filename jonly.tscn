@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bkrblqg2pd1v2" path="res://scooply.gd" id="2_gna47"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hchs4"]
-distance = -584.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hchs4"]
 size = Vector2(65, 69)
 
@@ -40,11 +37,6 @@ size = Vector2(85.58722, 29.195251)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=730885849]
 anchor_mode = 0
-
-[node name="floor" type="StaticBody2D" parent="." unique_id=1601645259]
-
-[node name="cfloor" type="CollisionShape2D" parent="floor" unique_id=623097981]
-shape = SubResource("WorldBoundaryShape2D_hchs4")
 
 [node name="baselink" type="StaticBody2D" parent="." unique_id=2073641110]
 
@@ -120,3 +112,14 @@ node_b = NodePath("../crowd/scoop")
 
 [node name="w" type="Marker2D" parent="." unique_id=563057708]
 position = Vector2(347.0683, 40.516537)
+
+[node name="World" type="Node2D" parent="." unique_id=2097796167]
+
+[node name="Polygon2D" type="Polygon2D" parent="World" unique_id=686350412]
+position = Vector2(104.510864, 475.13483)
+scale = Vector2(11.642716, 1.9325843)
+polygon = PackedVector2Array(-8.71883, 2, 77, 46, 22.629772, 91)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="World" unique_id=1374554215]
+position = Vector2(104.510864, 475.13483)
+scale = Vector2(11.642716, 1.9325843)
