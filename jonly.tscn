@@ -1,25 +1,31 @@
 [gd_scene format=3 uid="uid://dnkoq8b8nhrnw"]
 
-[ext_resource type="Texture2D" uid="uid://oa2fperdll4b" path="res://graphics/guyframes/guyback.png" id="1_n6lhs"]
+[ext_resource type="Texture2D" uid="uid://bvmtuat5e7t43" path="res://graphics/guyframesnoEye/iback.png" id="1_cohnp"]
+[ext_resource type="Shader" uid="uid://b3721yt4sxkjv" path="res://scroll.gdshader" id="1_ma3ou"]
 [ext_resource type="Texture2D" uid="uid://cd0rk0fsf0ea4" path="res://graphics/cabin.png" id="1_x3o0k"]
+[ext_resource type="Texture2D" uid="uid://dy2jjh1f5uq28" path="res://graphics/clouds.png" id="2_1gxae"]
 [ext_resource type="Texture2D" uid="uid://cs1iaoy440ccd" path="res://graphics/treads.png" id="2_7hugf"]
-[ext_resource type="Texture2D" uid="uid://dsg4vof78yimo" path="res://graphics/guyframes/guybofa.png" id="2_d1p8o"]
 [ext_resource type="Script" uid="uid://bkrblqg2pd1v2" path="res://scooply.gd" id="2_gna47"]
+[ext_resource type="Texture2D" uid="uid://b7ahiwhgqrgf7" path="res://graphics/guyframesnoEye/ibofa.png" id="2_t3quf"]
 [ext_resource type="Texture2D" uid="uid://bu3fswrx57vtp" path="res://graphics/stickonly.png" id="2_xlmbs"]
-[ext_resource type="Texture2D" uid="uid://2ixk6i1j1al2" path="res://graphics/guyframes/guyfront.png" id="3_7osxe"]
 [ext_resource type="Texture2D" uid="uid://b15vulb5tjrjn" path="res://graphics/boom.png" id="3_iiw48"]
+[ext_resource type="Texture2D" uid="uid://b6t7snsc2y2bf" path="res://graphics/guyframesnoEye/ifront.png" id="3_l1bqw"]
 [ext_resource type="Texture2D" uid="uid://ex7ytbt4gryu" path="res://graphics/bucketonly.png" id="3_pu31i"]
 [ext_resource type="Script" uid="uid://bm8j5xi87nwi7" path="res://guysprite.gd" id="4_cohnp"]
-[ext_resource type="Texture2D" uid="uid://bxi58gr6x2dd4" path="res://graphics/guyframes/guynone.png" id="4_d1p8o"]
+[ext_resource type="Texture2D" uid="uid://b5hhmaoi3ex1f" path="res://graphics/guyframesnoEye/ineither.png" id="4_ma3ou"]
+[ext_resource type="Texture2D" uid="uid://cxpjfwba387uu" path="res://graphics/catma.png" id="8_t3quf"]
 [ext_resource type="Script" uid="uid://diyq2pc5tmsc" path="res://cro2.gd" id="9_7osxe"]
 [ext_resource type="Script" uid="uid://fkgyplgl67sj" path="res://dirt.gd" id="13_7osxe"]
 [ext_resource type="Script" uid="uid://s5k4kh6anw86" path="res://door.gd" id="13_cohnp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
+shader = ExtResource("1_ma3ou")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3o0k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_n6lhs")
+"texture": ExtResource("1_cohnp")
 }],
 "loop": 1,
 "name": &"back",
@@ -27,7 +33,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_d1p8o")
+"texture": ExtResource("2_t3quf")
 }],
 "loop": 1,
 "name": &"bofa",
@@ -35,7 +41,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_7osxe")
+"texture": ExtResource("3_l1bqw")
 }],
 "loop": 1,
 "name": &"front",
@@ -43,7 +49,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_d1p8o")
+"texture": ExtResource("4_ma3ou")
 }],
 "loop": 1,
 "name": &"neither",
@@ -86,6 +92,23 @@ size = Vector2(82.823425, 20)
 
 [node name="Node2D" type="Node2D" unique_id=1108412309]
 
+[node name="Background" type="ColorRect" parent="." unique_id=1988624965]
+offset_left = -493.0
+offset_right = 1154.0
+offset_bottom = 928.0
+color = Color(0.52156866, 0.6431373, 0.80784315, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Background" unique_id=805330440]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_7msxs")
+layout_mode = 0
+offset_top = -60.0
+offset_right = 1646.0
+offset_bottom = 400.0
+texture = ExtResource("2_1gxae")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=730885849]
 position = Vector2(-493, 0)
 anchor_mode = 0
@@ -97,7 +120,6 @@ position = Vector2(373, 133)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_x3o0k")
 animation = &"neither"
-frame_progress = 0.07813117
 script = ExtResource("4_cohnp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1501220923]
@@ -109,6 +131,11 @@ flip_h = true
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1780811301]
 position = Vector2(-890.625, -4.5731716)
 texture = ExtResource("2_7hugf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=488958635]
+position = Vector2(-530.4878, -106.32622)
+scale = Vector2(0.12995428, 0.13567072)
+texture = ExtResource("8_t3quf")
 
 [node name="baselink" type="StaticBody2D" parent="." unique_id=2073641110]
 
