@@ -47,6 +47,7 @@ animations = [{
 "name": &"neither",
 "speed": 5.0
 }]
+[ext_resource type="Script" uid="uid://fkgyplgl67sj" path="res://dirt.gd" id="8_7hugf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hchs4"]
 size = Vector2(65, 69)
@@ -166,6 +167,7 @@ mass = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 70.6)
 can_sleep = false
+max_contacts_reported = 4
 angular_damp = 2.0
 script = ExtResource("2_gna47")
 sheave = NodePath("../../w")
@@ -184,8 +186,9 @@ texture = ExtResource("3_pu31i")
 position = Vector2(-3.5825195, 0.50842285)
 shape = SubResource("RectangleShape2D_gna47")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="crowd/scoop" unique_id=1164235623]
-visible = false
+[node name="scoopshape" type="CollisionPolygon2D" parent="crowd/scoop" unique_id=2115337509]
+unique_name_in_owner = true
+polygon = PackedVector2Array(37.727417, -97.367645, 40.10431, 41.490936, -44.899475, 42.38684, -45.83954, -42.366455, -23.602234, -73.49231)
 
 [node name="j_crowd_sliderblock" type="GrooveJoint2D" parent="crowd" unique_id=1877799415]
 unique_name_in_owner = true
@@ -210,10 +213,11 @@ node_b = NodePath("../crowd/scoop")
 [node name="w" type="Marker2D" parent="." unique_id=563057708]
 position = Vector2(347.0683, 40.516537)
 
-[node name="World" type="StaticBody2D" parent="." unique_id=101799484]
+[node name="World" type="Area2D" parent="." unique_id=1708139545]
+collision_layer = 15
+collision_mask = 15
+script = ExtResource("8_7hugf")
 
-[node name="Polygon2D" type="Polygon2D" parent="World" unique_id=304011962]
-polygon = PackedVector2Array(-341, 665, 673, 679, 668, 33, 1121, 43, 1130, 889, -438, 894, -440, 668)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World" unique_id=596824375]
-polygon = PackedVector2Array(-438, 896, 1126, 885, 1119, 45, 671, 33, 673, 668, -442, 665)
+[node name="poly" type="CollisionPolygon2D" parent="World" unique_id=596824375]
+unique_name_in_owner = true
+polygon = PackedVector2Array(-438, 896, 1126, 885, 1119, 45, 515.1, 35.99996, 642.69995, 617.89996, -442, 665)
