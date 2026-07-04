@@ -95,7 +95,7 @@ angular_damp = 46.775
 shape = SubResource("RectangleShape2D_75g0j")
 
 [node name="crowd" type="RigidBody2D" parent="." unique_id=1593320042]
-position = Vector2(387.71594, 313.83154)
+position = Vector2(309, 258)
 rotation = 0.61086524
 collision_layer = 0
 script = ExtResource("1_gna47")
@@ -111,8 +111,8 @@ texture = ExtResource("2_xlmbs")
 
 [node name="scoop" type="RigidBody2D" parent="crowd" unique_id=1575059163 node_paths=PackedStringArray("sheave")]
 position = Vector2(215.47882, 0.5428772)
-collision_layer = 2
-collision_mask = 3
+collision_layer = 6
+collision_mask = 7
 mass = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(0, 70.6)
@@ -146,7 +146,7 @@ scale = Vector2(0.99999994, 0.99999994)
 node_a = NodePath("..")
 node_b = NodePath("../../sliderblock")
 length = 400.0
-initial_offset = 377.0
+initial_offset = 281.0
 
 [node name="j_arm_sliderblock" type="PinJoint2D" parent="." unique_id=131223294]
 position = Vector2(235, 207)
@@ -154,11 +154,17 @@ node_a = NodePath("../arm")
 node_b = NodePath("../sliderblock")
 
 [node name="j_crowd_scoop" type="PinJoint2D" parent="." unique_id=847002039]
-position = Vector2(563.84814, 437.35703)
+position = Vector2(485, 382)
 node_a = NodePath("../crowd")
 node_b = NodePath("../crowd/scoop")
 
 [node name="w" type="Marker2D" parent="." unique_id=563057708]
 position = Vector2(347.0683, 40.516537)
 
-[node name="World" type="Node2D" parent="." unique_id=2097796167]
+[node name="World" type="StaticBody2D" parent="." unique_id=101799484]
+
+[node name="Polygon2D" type="Polygon2D" parent="World" unique_id=304011962]
+polygon = PackedVector2Array(-341, 665, 673, 679, 668, 33, 1121, 43, 1130, 889, -438, 894, -440, 668)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="World" unique_id=596824375]
+polygon = PackedVector2Array(-438, 896, 1126, 885, 1119, 45, 671, 33, 673, 668, -442, 665)
