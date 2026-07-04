@@ -42,7 +42,8 @@ func _physics_process(dt):
 	if isectA < min_bite:
 		return
 
-	%door.carried_area += isectA
+	# %door.carried_area += isectA
+	%door.add_dirt(isectA)
 
 	var clips = Geometry2D.clip_polygons(%poly.polygon, localcut)
 	if clips.is_empty():

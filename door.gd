@@ -50,6 +50,10 @@ func polybody(points: PackedVector2Array) -> RigidBody2D:
 
 	return body
 
+func add_dirt(area):
+	carried_area += area
+	
+
 func power_law_size(smin: float, smax: float, power: float = 2.0) -> float:
 	var u := randf()
 	var a := 1.0 - power

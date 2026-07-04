@@ -94,7 +94,8 @@ zoom = Vector2(0.7, 0.7)
 [node name="guysprite" type="AnimatedSprite2D" parent="." unique_id=191935852]
 unique_name_in_owner = true
 position = Vector2(373, 133)
-scale = Vector2(-1, 1)
+rotation = -3.1415927
+scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_x3o0k")
 animation = &"neither"
 frame_progress = 0.07813117
@@ -261,3 +262,12 @@ polygon = PackedVector2Array(-32, -64, -24, 40, 120, 40, 144, -64, 136, -64, 112
 [node name="dirtparent" type="Node2D" parent="." unique_id=2089694070]
 unique_name_in_owner = true
 position = Vector2(232, 584)
+
+[node name="bucket_gauge" type="ProgressBar" parent="." unique_id=561358267]
+unique_name_in_owner = true
+offset_left = -320.0
+offset_top = 32.0
+offset_right = -78.0
+offset_bottom = 69.5
+
+[node name="Node2D" type="Node2D" parent="." unique_id=929777961]
