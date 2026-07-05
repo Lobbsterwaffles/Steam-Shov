@@ -336,6 +336,17 @@ offset_bottom = 69.5
 position = Vector2(-29, 216)
 script = ExtResource("15_t3quf")
 
+[node name="eyes2" type="Node2D" parent="." unique_id=1575485376]
+position = Vector2(-97, 73)
+script = ExtResource("15_t3quf")
+eye_white = Color(0.94509804, 0.79607844, 0, 1)
+eye_liner = Color(0.92535293, 0.9253528, 0.9253529, 1)
+ellipse_major_radius = 5.0
+ellipse_minor_radius = 3.0
+pupil_major_radius = 1.0
+pupil_minor_radius = 5.0
+pupil_edge_offset_frac = 1.0
+
 [node name="HUD" type="TextureRect" parent="." unique_id=1739948707]
 offset_left = 666.0
 offset_top = 682.0
@@ -473,7 +484,7 @@ script = ExtResource("24_7gsng")
 
 [node name="money" type="Marker2D" parent="HUD" unique_id=1390117280]
 unique_name_in_owner = true
-position = Vector2(366.66666, 40.170937)
+position = Vector2(368.37607, 37.606834)
 script = ExtResource("25_6ihbu")
 
 [node name="PauseMenu" type="Control" parent="." unique_id=1889025290]
