@@ -56,9 +56,6 @@ func _ready() -> void:
 	# body_entered.connect(_on_body_entered)
 	
 
-	
-	
-
 
 func _tangent(pa: Vector2, s: float) -> Vector2:
 	var alpha := acos(myradius / pa.length())
@@ -132,6 +129,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if j_total > 0.0:
 		state.apply_central_impulse(j_total * forcedir)
 
+	update_levers()
+
 	queue_redraw()
 
 func _bar(label: String, x: float, value: float, color: Color) -> void:
@@ -173,6 +172,10 @@ func update_coal_gauge():
 	const rotation_full := deg_to_rad(-1)
 	# %coal_gauge_needle.rotation = lerp_angle(rotation_empty, rotation_full, coal / coal_capacity)
 	%coal_gauge_needle.rotation = lerpf(rotation_empty, rotation_full, coal / coal_capacity)
+
+func update_levers():
+	# %crowd_lever.global_position = %mark_crowd_bot
+	%hoist_lever.global_position = %mark_hoist_bot.global_position.lerp(%mark_hoist_top.global_position, clutch_amount)
 
 func _fuel(dt) -> void:
 	%CoalBar.value = coal
