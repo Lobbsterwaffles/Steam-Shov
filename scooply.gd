@@ -92,14 +92,14 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			brake_anchor = length
 		brake_lock_amount = 1
 
-	if Input.is_key_pressed(KEY_Q):
+	if Input.is_action_pressed("hoist_up"):
 		clutch_phase = move_toward(clutch_phase, 1.0, dt / CLUTCH_PRESS_T)
 		clutch_amount = clutch_press_curve.sample_baked(clutch_phase)
 	else:
 		clutch_phase = move_toward(clutch_phase, 0.0, dt / CLUTCH_RELEASE_T)
 		clutch_amount = clutch_release_curve.sample_baked(1.0 - clutch_phase)
 
-	if Input.is_key_pressed(KEY_SPACE):
+	if Input.is_action_pressed("hoist_brake"):
 		brake_phase = move_toward(brake_phase, 1.0, dt / BRAKE_PRESS_T)
 		brake_amount = brake_press_curve.sample_baked(brake_phase)
 	else:

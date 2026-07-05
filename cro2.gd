@@ -57,7 +57,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 
 func _input(ev):
-	if Input.is_key_pressed(KEY_C):
+	if Input.is_action_pressed("crowd_brake"):
 		pin()
 	else:
 		if pinjoint:
