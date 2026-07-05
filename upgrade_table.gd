@@ -26,5 +26,12 @@ static func build_rows() -> Array[Upgrade]:
 	u.cost = 35.0
 	u.efficiency = 0.1
 	rows.append(u)
+	
+	u = Upgrade.new()
+	u.id = "Cart Speed"
+	u.family = "Cart"
+	u.cost = 35.0
+	u.suckdown = 5.0
+	rows.append(u)
 
 	return rows
