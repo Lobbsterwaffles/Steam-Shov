@@ -179,8 +179,7 @@ func update_coal_gauge():
 	%coal_gauge_needle.rotation = lerpf(rotation_empty, rotation_full, coal / coal_capacity)
 
 func update_levers():
-	# %crowd_lever.global_position = %mark_crowd_bot
-	%hoist_lever.global_position = %mark_hoist_bot.global_position.lerp(%mark_hoist_top.global_position, clutch_amount)
+	%hoist_lever.set_lever_position(clutch_amount)
 
 func _fuel(dt) -> void:
 	# %CoalBar.value = coal

@@ -519,12 +519,12 @@ position = Vector2(144.44446, 143.58975)
 
 [node name="crowd_lever" type="Node2D" parent="HUD" unique_id=1330973720]
 unique_name_in_owner = true
-position = Vector2(68.3761, 129.05981)
+position = Vector2(69.2308, 92.30768)
 script = ExtResource("24_7gsng")
 
 [node name="hoist_lever" type="Node2D" parent="HUD" unique_id=862602115]
 unique_name_in_owner = true
-position = Vector2(144.44444, 129.91454)
+position = Vector2(144.44444, 92.30769)
 script = ExtResource("24_7gsng")
 
 [node name="money" type="Marker2D" parent="HUD" unique_id=1390117280]
