@@ -1,0 +1,20 @@
+[gd_resource type="Theme" format=3 uid="uid://cg0caupgk0fgu"]
+
+[ext_resource type="Texture2D" uid="uid://dwq0o40t462gv" path="res://graphics/UI/Help/steamjamHelpBlank.png" id="1_2pn01"]
+[ext_resource type="FontFile" uid="uid://ddq48vf60saht" path="res://graphics/UI/akaPosse.ttf" id="2_tbeor"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xi0ly"]
+texture = ExtResource("1_2pn01")
+region_rect = Rect2(225.90453, 93.75864, 709.28284, 554.3069)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_touxu"]
+
+[resource]
+default_font = ExtResource("2_tbeor")
+default_font_size = 40
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0.29219002, 0.29219005, 0.29219002, 0)
+Panel/styles/panel = SubResource("StyleBoxTexture_xi0ly")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_touxu")

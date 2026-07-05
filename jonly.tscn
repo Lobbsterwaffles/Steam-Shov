@@ -30,9 +30,9 @@
 [ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="25_6ihbu"]
 [ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="25_cdl7u"]
 [ext_resource type="Texture2D" uid="uid://dw847rp0sfuyr" path="res://graphics/UI/Gauge.png" id="26_gght3"]
-[ext_resource type="Texture2D" uid="uid://ieraba7vvy46" path="res://graphics/UI/Help/steamjamHelp.png" id="28_wcugm"]
-[ext_resource type="Texture2D" uid="uid://bqcqnm41g7cxr" path="res://graphics/UI/killscreen.png" id="32_7xl4i"]
+[ext_resource type="Theme" uid="uid://cg0caupgk0fgu" path="res://ui_theme.tres" id="32_7xl4i"]
 [ext_resource type="Script" uid="uid://cdhvvlo4hvfcf" path="res://cheat.gd" id="32_cdl7u"]
+[ext_resource type="Texture2D" uid="uid://cj1wgdgv4db24" path="res://graphics/UI/helpdiagram.png" id="32_f1koc"]
 [ext_resource type="Resource" uid="uid://d1ig8yxehxk4q" path="res://table/upgrade_table.tres" id="33_gght3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
@@ -525,19 +525,19 @@ expand_mode = 1
 [node name="PauseMenu" type="Control" parent="." unique_id=1889025290]
 unique_name_in_owner = true
 process_mode = 2
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="PauseMenu" unique_id=1585720675]
-visible = false
+[node name="TextureRect" type="Panel" parent="PauseMenu" unique_id=894778521]
 layout_mode = 0
 offset_left = -118.0
 offset_top = 165.0
 offset_right = 816.0
 offset_bottom = 635.0
-texture = ExtResource("22_wcugm")
+theme = ExtResource("32_7xl4i")
 
 [node name="Unpause" type="Button" parent="PauseMenu/TextureRect" unique_id=546777555]
 layout_mode = 0
@@ -580,24 +580,119 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("32_7xl4i")
 
-[node name="TextureRect" type="TextureRect" parent="help_Screen" unique_id=1998069963]
-layout_mode = 0
-offset_left = -396.0
-offset_top = -4.0
-offset_right = 1072.3333
-offset_bottom = 877.0
-texture = ExtResource("28_wcugm")
+[node name="TextureRect" type="Panel" parent="help_Screen" unique_id=756196102]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = 88.0
+offset_right = 562.0
+offset_bottom = 818.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="close_help" type="Button" parent="help_Screen/TextureRect" unique_id=546384483]
 process_mode = 2
 layout_mode = 0
-offset_left = 668.0
-offset_top = 804.0
-offset_right = 780.25806
-offset_bottom = 864.0
+offset_left = 461.0
+offset_top = 621.0
+offset_right = 573.25806
+offset_bottom = 681.0
 theme_override_font_sizes/font_size = 29
 text = "CLOSE"
+
+[node name="Label" type="Label" parent="help_Screen/TextureRect" unique_id=50997355]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -383.0
+offset_top = -308.0
+offset_right = 413.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Use 'q' to hoist the bucket.
+Use 'space' to lock the hoist.
+
+Use 'o' to pull the crowd IN.
+Use 'p' to push the crowd OUT.
+Use 'b' to release the dirt from the bucket.
+
+REMEMBER: Be careful with the equipment!
+Any damages are coming out of your pay!"
+
+[node name="Panel" type="Panel" parent="help_Screen" unique_id=1299572929]
+layout_mode = 0
+offset_left = 629.0
+offset_top = 108.0
+offset_right = 1097.0
+offset_bottom = 833.0
+
+[node name="TextureRect" type="TextureRect" parent="help_Screen/Panel" unique_id=1538619619]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 381.0
+offset_right = 478.04822
+offset_bottom = 710.0
+texture = ExtResource("32_f1koc")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="help_Screen/Panel" unique_id=774489549]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 468.0
+offset_bottom = 363.0
+
+[node name="Label" type="Label" parent="help_Screen/Panel/VBoxContainer" unique_id=1320070611]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9408267, 0.00019175292, 0.8004002, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "HOIST"
+
+[node name="Label2" type="Label" parent="help_Screen/Panel/VBoxContainer" unique_id=2102804523]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.93333334, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "CROWD"
+
+[node name="Label3" type="Label" parent="help_Screen/Panel/VBoxContainer" unique_id=1238008060]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1930196, 0.2477071, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "BUCKET"
+
+[node name="Label4" type="Label" parent="help_Screen/Panel/VBoxContainer" unique_id=1671839639]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96532303, 0.74446714, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "BUCKET RELEASE"
+
+[node name="Label5" type="Label" parent="help_Screen/Panel/VBoxContainer" unique_id=1487802374]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.33333334, 0.96862745, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "RAILCART"
+
+[node name="Label6" type="Label" parent="help_Screen/Panel/VBoxContainer" unique_id=1678104126]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3647059, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+text = "CAT"
 
 [node name="kill_screen" type="Control" parent="." unique_id=113495379]
 unique_name_in_owner = true
@@ -607,24 +702,39 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("32_7xl4i")
 
-[node name="TextureRect" type="TextureRect" parent="kill_screen" unique_id=779880097]
+[node name="panel" type="Panel" parent="kill_screen" unique_id=38447095]
 layout_mode = 0
-offset_left = -396.0
-offset_top = -4.0
-offset_right = 1072.3333
-offset_bottom = 877.0
-texture = ExtResource("32_7xl4i")
+offset_left = -118.0
+offset_top = 100.0
+offset_right = 861.99994
+offset_bottom = 688.0
 
-[node name="again_yes" type="Button" parent="kill_screen/TextureRect" unique_id=602569164]
+[node name="again_yes" type="Button" parent="kill_screen/panel" unique_id=602569164]
 layout_mode = 0
-offset_left = 642.0
-offset_top = 404.0
-offset_right = 816.19354
-offset_bottom = 479.0
+offset_left = 390.0
+offset_top = 484.0
+offset_right = 564.19354
+offset_bottom = 559.0
 theme_override_font_sizes/font_size = 38
 text = "YES
 "
+
+[node name="Label" type="Label" parent="kill_screen/panel" unique_id=2062731927]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -196.0
+offset_top = 93.0
+offset_right = 196.00003
+offset_bottom = 408.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 81
+text = "GAME OVER
+
+Try again?"
 
 [node name="cheat" type="Panel" parent="." unique_id=1996473990]
 offset_left = 45.0
@@ -674,4 +784,4 @@ grow_vertical = 0
 [connection signal="pressed" from="PauseMenu/TextureRect/Help" to="." method="help"]
 [connection signal="pressed" from="Pause" to="." method="pause"]
 [connection signal="pressed" from="help_Screen/TextureRect/close_help" to="." method="closehelp"]
-[connection signal="pressed" from="kill_screen/TextureRect/again_yes" to="." method="restart"]
+[connection signal="pressed" from="kill_screen/panel/again_yes" to="." method="restart"]
