@@ -356,15 +356,14 @@ position = Vector2(-29, 216)
 script = ExtResource("15_t3quf")
 
 [node name="eyes2" type="Node2D" parent="." unique_id=1575485376]
-position = Vector2(-97, 73)
+position = Vector2(-93, 73)
 script = ExtResource("15_t3quf")
 eye_white = Color(0.94509804, 0.79607844, 0, 1)
 eye_liner = Color(0.92535293, 0.9253528, 0.9253529, 1)
-ellipse_major_radius = 5.0
-ellipse_minor_radius = 3.0
-pupil_major_radius = 1.0
-pupil_minor_radius = 5.0
-pupil_edge_offset_frac = 1.0
+ellipse_major_radius = 2.145
+pupil_major_radius = 2.0
+pupil_minor_radius = 4.0
+pupil_edge_offset_frac = 0.0
 
 [node name="HUD" type="TextureRect" parent="." unique_id=1739948707]
 offset_left = 666.0
@@ -386,6 +385,7 @@ texture = ExtResource("23_rmmu8")
 expand_mode = 1
 
 [node name="buy_1" type="TextureRect" parent="HUD/Store" unique_id=1025644494]
+visible = false
 layout_mode = 0
 offset_left = 78.03768
 offset_top = 828.6882
@@ -394,6 +394,7 @@ offset_bottom = 897.6882
 texture = ExtResource("24_rvxmr")
 
 [node name="buy_2" type="TextureRect" parent="HUD/Store" unique_id=854378678]
+visible = false
 layout_mode = 0
 offset_left = 546.2651
 offset_top = 828.68823
@@ -402,6 +403,7 @@ offset_bottom = 897.68823
 texture = ExtResource("24_rvxmr")
 
 [node name="buy_3" type="TextureRect" parent="HUD/Store" unique_id=1444044079]
+visible = false
 layout_mode = 0
 offset_left = 78.03768
 offset_top = 927.16455
@@ -410,6 +412,7 @@ offset_bottom = 996.16455
 texture = ExtResource("24_rvxmr")
 
 [node name="buy_4" type="TextureRect" parent="HUD/Store" unique_id=1712648796]
+visible = false
 layout_mode = 0
 offset_left = 546.2651
 offset_top = 927.16455
@@ -418,6 +421,7 @@ offset_bottom = 996.16455
 texture = ExtResource("24_rvxmr")
 
 [node name="cost_1" type="TextureRect" parent="HUD/Store" unique_id=793147213]
+visible = false
 layout_mode = 0
 offset_left = 78.03766
 offset_top = 750.65027
@@ -426,6 +430,7 @@ offset_bottom = 819.65027
 texture = ExtResource("25_cdl7u")
 
 [node name="cost_2" type="TextureRect" parent="HUD/Store" unique_id=276452007]
+visible = false
 layout_mode = 0
 offset_left = 546.26514
 offset_top = 750.65027
@@ -434,6 +439,7 @@ offset_bottom = 819.65027
 texture = ExtResource("25_cdl7u")
 
 [node name="cost_3" type="TextureRect" parent="HUD/Store" unique_id=997229739]
+visible = false
 layout_mode = 0
 offset_left = 78.03769
 offset_top = 1010.7766
@@ -442,6 +448,7 @@ offset_bottom = 1079.7766
 texture = ExtResource("25_cdl7u")
 
 [node name="cost_4" type="TextureRect" parent="HUD/Store" unique_id=1033120499]
+visible = false
 layout_mode = 0
 offset_left = 546.26526
 offset_top = 1010.7766
@@ -506,6 +513,15 @@ unique_name_in_owner = true
 position = Vector2(368.37607, 37.606834)
 script = ExtResource("25_6ihbu")
 
+[node name="buy_coal" type="TextureRect" parent="HUD" unique_id=1168356268]
+layout_mode = 0
+offset_left = -159.82907
+offset_top = 64.957275
+offset_right = -0.17105103
+offset_bottom = 145.2991
+texture = ExtResource("22_wcugm")
+expand_mode = 1
+
 [node name="PauseMenu" type="Control" parent="." unique_id=1889025290]
 unique_name_in_owner = true
 process_mode = 2
@@ -555,7 +571,7 @@ offset_left = -480.0
 offset_top = 17.0
 offset_right = -425.0
 offset_bottom = 48.0
-text = "Pause"
+text = "MENU"
 
 [node name="help_Screen" type="Control" parent="." unique_id=1852025290]
 unique_name_in_owner = true
