@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0ccu33pv8u8p"
-path="res://.godot/imported/steamjamIntro.png-e477dc236cd725718a039c831de42e9f.ctex"
+uid="uid://db7546kd64btd"
+path="res://.godot/imported/money.png-00dc13cef84a9577ed66e64d678da3f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Help/steamjamIntro.png"
-dest_files=["res://.godot/imported/steamjamIntro.png-e477dc236cd725718a039c831de42e9f.ctex"]
+source_file="res://graphics/UI/money.png"
+dest_files=["res://.godot/imported/money.png-00dc13cef84a9577ed66e64d678da3f3.ctex"]
 
 [params]
 

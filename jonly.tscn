@@ -21,13 +21,16 @@
 [ext_resource type="Script" uid="uid://hsvi8bao0mcw" path="res://eyes.gd" id="15_t3quf"]
 [ext_resource type="Texture2D" uid="uid://de0o37vvkshp7" path="res://graphics/minecart.png" id="18_oeujs"]
 [ext_resource type="Script" uid="uid://byhxrwc4ypulh" path="res://dirt_despawner.gd" id="19_m8a62"]
-[ext_resource type="Texture2D" uid="uid://cwn2pk1felgyx" path="res://graphics/shovedisplay.png" id="20_n0lup"]
-[ext_resource type="Texture2D" uid="uid://b40lov7wgfke1" path="res://graphics/store.png" id="21_qye30"]
 [ext_resource type="Texture2D" uid="uid://bqlb1f5g2qprm" path="res://graphics/needle.png" id="22_pwk5d"]
+[ext_resource type="Texture2D" uid="uid://cf4nu21g6fg05" path="res://graphics/UI/HUD.png" id="22_wcugm"]
+[ext_resource type="Texture2D" uid="uid://cr4p8r813qe1" path="res://graphics/UI/store.png" id="23_rmmu8"]
 [ext_resource type="Script" uid="uid://5fugxflkihgu" path="res://lever_simple_marker.gd" id="24_7gsng"]
+[ext_resource type="Texture2D" uid="uid://76m2uj5wlwbi" path="res://graphics/UI/plaque.png" id="24_rvxmr"]
 [ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="25_6ihbu"]
+[ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="25_cdl7u"]
+[ext_resource type="Texture2D" uid="uid://dw847rp0sfuyr" path="res://graphics/UI/Gauge.png" id="26_gght3"]
 [ext_resource type="Texture2D" uid="uid://c3ljma263w2bh" path="res://graphics/shoveMenu.png" id="26_htn8h"]
-[ext_resource type="Texture2D" uid="uid://ieraba7vvy46" path="res://graphics/Help/steamjamHelp.png" id="28_wcugm"]
+[ext_resource type="Texture2D" uid="uid://ieraba7vvy46" path="res://graphics/UI/Help/steamjamHelp.png" id="28_wcugm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
@@ -334,28 +337,103 @@ script = ExtResource("15_t3quf")
 [node name="HUD" type="TextureRect" parent="." unique_id=1739948707]
 offset_left = 666.0
 offset_top = 682.0
-offset_right = 1082.0
-offset_bottom = 1182.0
+offset_right = 1082.1301
+offset_bottom = 891.4017
 scale = Vector2(1.17, 1.17)
-texture = ExtResource("20_n0lup")
+texture = ExtResource("22_wcugm")
+expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="HUD" unique_id=982162618]
+[node name="Store" type="TextureRect" parent="HUD" unique_id=982162618]
 layout_mode = 0
 offset_left = -990.59827
 offset_top = -305.12817
 offset_right = -56.598267
 offset_bottom = 815.8718
 scale = Vector2(0.46, 0.46)
-texture = ExtResource("21_qye30")
+texture = ExtResource("23_rmmu8")
 expand_mode = 1
 
-[node name="CoalBar" type="ProgressBar" parent="HUD/TextureRect" unique_id=666217027]
-unique_name_in_owner = true
+[node name="buy_1" type="TextureRect" parent="HUD/Store" unique_id=1025644494]
 layout_mode = 0
-offset_left = 2655.1467
-offset_top = 304.71936
-offset_right = 2974.7307
-offset_bottom = 624.3032
+offset_left = 78.03768
+offset_top = 828.6882
+offset_right = 391.0377
+offset_bottom = 897.6882
+texture = ExtResource("24_rvxmr")
+
+[node name="buy_2" type="TextureRect" parent="HUD/Store" unique_id=854378678]
+layout_mode = 0
+offset_left = 546.2651
+offset_top = 828.68823
+offset_right = 859.2651
+offset_bottom = 897.68823
+texture = ExtResource("24_rvxmr")
+
+[node name="buy_3" type="TextureRect" parent="HUD/Store" unique_id=1444044079]
+layout_mode = 0
+offset_left = 78.03768
+offset_top = 927.16455
+offset_right = 391.0377
+offset_bottom = 996.16455
+texture = ExtResource("24_rvxmr")
+
+[node name="buy_4" type="TextureRect" parent="HUD/Store" unique_id=1712648796]
+layout_mode = 0
+offset_left = 546.2651
+offset_top = 927.16455
+offset_right = 859.2651
+offset_bottom = 996.16455
+texture = ExtResource("24_rvxmr")
+
+[node name="cost_1" type="TextureRect" parent="HUD/Store" unique_id=793147213]
+layout_mode = 0
+offset_left = 78.03766
+offset_top = 750.65027
+offset_right = 391.03766
+offset_bottom = 819.65027
+texture = ExtResource("25_cdl7u")
+
+[node name="cost_2" type="TextureRect" parent="HUD/Store" unique_id=276452007]
+layout_mode = 0
+offset_left = 546.26514
+offset_top = 750.65027
+offset_right = 859.26514
+offset_bottom = 819.65027
+texture = ExtResource("25_cdl7u")
+
+[node name="cost_3" type="TextureRect" parent="HUD/Store" unique_id=997229739]
+layout_mode = 0
+offset_left = 78.03769
+offset_top = 1010.7766
+offset_right = 391.0377
+offset_bottom = 1079.7766
+texture = ExtResource("25_cdl7u")
+
+[node name="cost_4" type="TextureRect" parent="HUD/Store" unique_id=1033120499]
+layout_mode = 0
+offset_left = 546.26526
+offset_top = 1010.7766
+offset_right = 859.26526
+offset_bottom = 1079.7766
+texture = ExtResource("25_cdl7u")
+
+[node name="coal_gauge" type="TextureRect" parent="HUD" unique_id=1607926552]
+layout_mode = 0
+offset_left = 262.3932
+offset_top = 64.957275
+offset_right = 389.74365
+offset_bottom = 192.30774
+texture = ExtResource("26_gght3")
+expand_mode = 1
+
+[node name="player_money" type="TextureRect" parent="HUD" unique_id=533616330]
+layout_mode = 0
+offset_left = 244.44446
+offset_top = 18.803406
+offset_right = 389.14178
+offset_bottom = 54.324768
+texture = ExtResource("25_cdl7u")
+expand_mode = 1
 
 [node name="coal_gauge_needle" type="Sprite2D" parent="HUD" unique_id=1943324019]
 unique_name_in_owner = true
