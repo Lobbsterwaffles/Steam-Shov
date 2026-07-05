@@ -346,16 +346,28 @@ expand_mode = 1
 
 [node name="CoalBar" type="ProgressBar" parent="HUD/TextureRect" unique_id=666217027]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 2655.1467
 offset_top = 304.71936
 offset_right = 2974.7307
 offset_bottom = 624.3032
 
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD/TextureRect" unique_id=1445332623]
+layout_mode = 0
+offset_left = 2811.2224
+offset_top = 895.5779
+offset_right = 2884.4592
+offset_bottom = 968.8148
+scale = Vector2(1.37, 1.37)
+fill_mode = 4
+radial_fill_degrees = 231.7
+texture_progress = ExtResource("22_pwk5d")
+
 [node name="coal_needle" type="Sprite2D" parent="HUD" unique_id=1943324019]
 unique_name_in_owner = true
+visible = false
 position = Vector2(324.7864, 129.91454)
-rotation = -4.738569
 scale = Vector2(0.68, 0.68)
 texture = ExtResource("22_pwk5d")
 centered = false

@@ -168,6 +168,7 @@ func _draw() -> void:
 
 func _fuel(dt) -> void:
 	%CoalBar.value = coal
+	
 	print("coal: ", coal)
 	if (Input.is_action_pressed("crowd_in") 
 			or Input.is_action_pressed("crowd_out")
