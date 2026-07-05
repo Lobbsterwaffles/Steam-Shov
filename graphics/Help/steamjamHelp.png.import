@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhpx5cgnedrav"
-path="res://.godot/imported/Instructions.png-e6945df2cda02f2c618ee186b436700d.ctex"
+uid="uid://ieraba7vvy46"
+path="res://.godot/imported/steamjamHelp.png-27bf32b3ed12a88164232765987e7ba4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/Help/Instructions.png"
-dest_files=["res://.godot/imported/Instructions.png-e6945df2cda02f2c618ee186b436700d.ctex"]
+source_file="res://graphics/Help/steamjamHelp.png"
+dest_files=["res://.godot/imported/steamjamHelp.png-27bf32b3ed12a88164232765987e7ba4.ctex"]
 
 [params]
 

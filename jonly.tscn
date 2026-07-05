@@ -27,6 +27,7 @@
 [ext_resource type="Script" uid="uid://5fugxflkihgu" path="res://lever_simple_marker.gd" id="24_7gsng"]
 [ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="25_6ihbu"]
 [ext_resource type="Texture2D" uid="uid://c3ljma263w2bh" path="res://graphics/shoveMenu.png" id="26_htn8h"]
+[ext_resource type="Texture2D" uid="uid://ieraba7vvy46" path="res://graphics/Help/steamjamHelp.png" id="28_wcugm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
@@ -420,7 +421,7 @@ offset_top = 47.0
 offset_right = 376.19354
 offset_bottom = 122.0
 theme_override_font_sizes/font_size = 38
-text = "RESUME"
+text = "UNPAUSE"
 
 [node name="Restart" type="Button" parent="PauseMenu/TextureRect" unique_id=65412864]
 layout_mode = 0
@@ -431,14 +432,14 @@ offset_bottom = 304.0
 theme_override_font_sizes/font_size = 38
 text = "RESTART"
 
-[node name="Options" type="Button" parent="PauseMenu/TextureRect" unique_id=124645545]
+[node name="Help" type="Button" parent="PauseMenu/TextureRect" unique_id=124645545]
 layout_mode = 0
 offset_left = 202.0
 offset_top = 411.0
 offset_right = 377.0
 offset_bottom = 486.0
 theme_override_font_sizes/font_size = 38
-text = "OPTIONS"
+text = "HELP ME"
 
 [node name="Quit" type="Button" parent="PauseMenu/TextureRect" unique_id=596028507]
 layout_mode = 0
@@ -456,5 +457,34 @@ offset_right = -425.0
 offset_bottom = 48.0
 text = "Pause"
 
+[node name="help_Screen" type="Control" parent="." unique_id=1852025290]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="help_Screen" unique_id=1998069963]
+layout_mode = 0
+offset_left = -396.0
+offset_top = -4.0
+offset_right = 1072.3333
+offset_bottom = 877.0
+texture = ExtResource("28_wcugm")
+
+[node name="close_help" type="Button" parent="help_Screen/TextureRect" unique_id=546384483]
+process_mode = 2
+layout_mode = 0
+offset_left = 668.0
+offset_top = 804.0
+offset_right = 780.25806
+offset_bottom = 864.0
+theme_override_font_sizes/font_size = 29
+text = "CLOSE"
+
 [connection signal="pressed" from="PauseMenu/TextureRect/Unpause" to="." method="unpause"]
+[connection signal="pressed" from="PauseMenu/TextureRect/Restart" to="." method="restart"]
+[connection signal="pressed" from="PauseMenu/TextureRect/Help" to="." method="help"]
 [connection signal="pressed" from="Pause" to="." method="pause"]
+[connection signal="pressed" from="help_Screen/TextureRect/close_help" to="." method="closehelp"]
