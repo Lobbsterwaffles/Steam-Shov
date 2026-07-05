@@ -3,10 +3,16 @@ extends RigidBody2D
 var pinjoint : PinJoint2D
 
 var carried_area := 0.0
-var area_capacity := 10000 # maybe should be derived from actual scoop area?
+var area_capacity := 10000.0 # maybe should be derived from actual scoop area?
 
 var dumping := false
 
+
+func _ready() -> void:
+	MachineState.bind(apply_upgrade)
+
+func apply_upgrade(u: Upgrade) -> void:
+	area_capacity += u.bucket_capacity
 
 func _physics_process(dt):
 	if Input.is_key_pressed(KEY_T):

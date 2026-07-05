@@ -48,12 +48,19 @@ var burning_coal := true
 var efficiency := .1
 
 func _ready() -> void:
+	MachineState.bind(apply_upgrade)
 	if sheave != null:
 		_update_geometry(global_position)
 		lastlength = length
 		brake_anchor = length
 	queue_redraw()
 	# body_entered.connect(_on_body_entered)
+
+func apply_upgrade(u: Upgrade) -> void:
+	engine_speed += u.hoist_engine_speed
+	clutch_force += u.hoist_clutch_force
+	brake_force += u.hoist_brake_force
+	efficiency += u.efficiency
 	
 
 

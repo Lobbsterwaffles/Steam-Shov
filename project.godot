@@ -15,6 +15,10 @@ run/main_scene="uid://dnkoq8b8nhrnw"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+MachineState="*res://machine_state.gd"
+
 [input]
 
 crowd_in={

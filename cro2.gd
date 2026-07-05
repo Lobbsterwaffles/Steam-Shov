@@ -8,8 +8,12 @@ var clutch_phase := 0.0
 const CLUTCH_PRESS_T := 0.23
 
 func _ready() -> void:
+	MachineState.bind(apply_upgrade)
 	_update_geometry()
 	queue_redraw()
+
+func apply_upgrade(u: Upgrade) -> void:
+	drive_force += u.crowd_drive_force
 
 func _update_geometry() -> void:
 	var j := %j_crowd_sliderblock as Node2D

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="UpgradeTable" format=3 uid="uid://d1ig8yxehxk4q"]
+
+[ext_resource type="Script" uid="uid://cnflawa1tlj6l" path="res://upgrade_row.gd" id="1_rngr4"]
+[ext_resource type="Script" uid="uid://812nvd2p5sxu" path="res://upgrade_table.gd" id="2_bsr8j"]
+
+[sub_resource type="Resource" id="Resource_rngr4"]
+script = ExtResource("1_rngr4")
+id = "Faster Hoist"
+hoist_engine_speed = 25.0
+
+[sub_resource type="Resource" id="Resource_bsr8j"]
+script = ExtResource("1_rngr4")
+id = "Bigger Bucket"
+bucket_capacity = 4500.0
+
+[sub_resource type="Resource" id="Resource_2ksiu"]
+script = ExtResource("1_rngr4")
+id = "Efficiency"
+efficiency = 0.1
+
+[resource]
+script = ExtResource("2_bsr8j")
+rows = Array[ExtResource("1_rngr4")]([SubResource("Resource_rngr4"), SubResource("Resource_bsr8j"), SubResource("Resource_2ksiu")])
+metadata/_custom_type_script = "uid://812nvd2p5sxu"
