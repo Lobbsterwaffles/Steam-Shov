@@ -4,21 +4,25 @@ var cutter
 var clock = 0
 
 @export var min_bite := 10.0
-@export var velocity := Vector2(-10.0, 0.0)
+@export var velocity := Vector2(-20.0, 0.0)
+
+@onready var scoop = %scoop 
+@onready var scoopshape = %scoopshape
+@onready var arm = %arm
 
 func _ready():
 	body_entered.connect(_enter)
 	body_exited.connect(_exit)
 
 func _enter(other):
-	var scoop = other.get_node("%scoopshape")
-	if not scoop:
+	if other == arm:
+		get_tree().current_scene.game_over()
+	if other != scoop:
 		return
-	cutter = scoop
+	cutter = scoopshape
 
 func _exit(other):
-	var scoop = other.get_node("%scoopshape")
-	if not scoop:
+	if other != scoop:
 		return
 	
 func _physics_process(dt):
