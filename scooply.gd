@@ -13,6 +13,7 @@ extends RigidBody2D
 @export var clutch_release_curve : Curve
 @export var brake_release_curve : Curve
 
+
 const CLUTCH_PRESS_T := 0.5
 const CLUTCH_RELEASE_T := 0.5
 const BRAKE_PRESS_T := 0.5
@@ -195,6 +196,8 @@ func _fuel(dt) -> void:
 	if burning_coal:
 		coal -= dt * 1/efficiency
 		update_coal_gauge()
+	
+
 	
 	
 		
