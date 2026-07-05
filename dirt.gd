@@ -4,7 +4,7 @@ var cutter
 var clock = 0
 
 @export var min_bite := 10.0
-@export var velocity := Vector2(-20.0, 0.0)
+@export var velocity := Vector2(-5.0, 0.0)
 
 @onready var scoop = %scoop 
 @onready var scoopshape = %scoopshape
@@ -14,6 +14,7 @@ var clock = 0
 func _ready():
 	body_entered.connect(_enter)
 	body_exited.connect(_exit)
+	%visualdirt.polygon = %poly.polygon
 
 func _enter(other):
 	if other == arm:
@@ -55,6 +56,7 @@ func _physics_process(dt):
 	if clips.is_empty():
 		return
 	%poly.set_deferred("polygon", clips[0])
+	%visualdirt.set_deferred("polygon", clips[0])
 	queue_redraw()
 
 func _draw():

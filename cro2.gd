@@ -25,6 +25,7 @@ func _update_geometry() -> void:
 func pin():
 	if pinjoint:
 		return
+	%crowd_brake_light.visible = true
 	pinjoint = PinJoint2D.new()
 	pinjoint.position = to_local(%sliderblock.global_position)
 	pinjoint.node_a = self.get_path()
@@ -65,6 +66,7 @@ func _input(ev):
 		pin()
 	else:
 		if pinjoint:
+			%crowd_brake_light.visible = false
 			pinjoint.queue_free()
 
 func _draw():

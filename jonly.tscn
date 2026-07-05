@@ -40,6 +40,8 @@
 [ext_resource type="Script" uid="uid://iovpq4v16u5y" path="res://crowd_gear.gd" id="35_f1koc"]
 [ext_resource type="Script" uid="uid://psl3lcpct5os" path="res://buy_coal_button.gd" id="36_hn0kn"]
 [ext_resource type="Texture2D" uid="uid://bo3yoym7sdb2s" path="res://graphics/gear_shape.png" id="36_v1mlq"]
+[ext_resource type="Texture2D" uid="uid://m61flgm0iba6" path="res://graphics/bulbcage.png" id="37_tc8o3"]
+[ext_resource type="Script" uid="uid://sl81tjhctu2d" path="res://lightup.gd" id="38_t2l85"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
@@ -357,6 +359,10 @@ script = ExtResource("13_7osxe")
 unique_name_in_owner = true
 polygon = PackedVector2Array(-438, 896, 3463, 865, 3451, 37, 736, 433, 662, 645, -442, 665)
 
+[node name="visualdirt" type="Polygon2D" parent="World" unique_id=1655667012]
+unique_name_in_owner = true
+color = Color(0.24, 0.12991999, 0.0864, 1)
+
 [node name="minecart" type="StaticBody2D" parent="." unique_id=1387034368]
 position = Vector2(232, 584)
 collision_layer = 1793
@@ -597,6 +603,77 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rngr4")
 text = "BUY COAL $25"
 flat = true
 script = ExtResource("36_hn0kn")
+
+[node name="Label" type="Label" parent="HUD" unique_id=578733796]
+layout_mode = 0
+offset_left = 87.17947
+offset_top = 172.64955
+offset_right = 127.17947
+offset_bottom = 195.64955
+theme = ExtResource("32_7xl4i")
+theme_override_font_sizes/font_size = 14
+text = "brake"
+
+[node name="Label2" type="Label" parent="HUD" unique_id=1308737146]
+layout_mode = 0
+anchor_left = 0.117073774
+anchor_top = 0.0244897
+anchor_right = 0.21319756
+anchor_bottom = 0.13432646
+theme = ExtResource("32_7xl4i")
+theme_override_font_sizes/font_size = 14
+text = "crowd"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="HUD" unique_id=193349246]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.310143
+anchor_top = 0.0244897
+anchor_right = 0.40626678
+anchor_bottom = 0.13432646
+theme = ExtResource("32_7xl4i")
+theme_override_font_sizes/font_size = 14
+text = "hoist"
+metadata/_edit_use_anchors_ = true
+
+[node name="brake1" type="TextureRect" parent="HUD" unique_id=1246006540]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.10475028
+anchor_top = 0.7632655
+anchor_right = 0.21815461
+anchor_bottom = 0.9886265
+offset_right = 80.809044
+offset_bottom = 80.80904
+scale = Vector2(0.3686794, 0.3686794)
+texture = ExtResource("37_tc8o3")
+metadata/_edit_use_anchors_ = true
+
+[node name="crowd_brake_light" type="Marker2D" parent="HUD/brake1" unique_id=855915307]
+unique_name_in_owner = true
+visible = false
+position = Vector2(64.91168, 64.91175)
+script = ExtResource("38_t2l85")
+
+[node name="brake2" type="TextureRect" parent="HUD" unique_id=1748716099]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2896037
+anchor_top = 0.7632655
+anchor_right = 0.40300807
+anchor_bottom = 0.9886265
+offset_right = 80.809044
+offset_bottom = 80.80904
+scale = Vector2(0.3686794, 0.3686794)
+texture = ExtResource("37_tc8o3")
+metadata/_edit_use_anchors_ = true
+
+[node name="hoist_brake_light" type="Marker2D" parent="HUD/brake2" unique_id=148392592]
+unique_name_in_owner = true
+visible = false
+position = Vector2(64.91175, 64.91175)
+script = ExtResource("38_t2l85")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=2128918538]
 offset_left = -430.0
