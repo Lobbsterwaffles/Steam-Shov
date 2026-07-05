@@ -71,3 +71,8 @@ func intersect_area(a: PackedVector2Array, b: PackedVector2Array) -> float:
 		total += signed_area(r)
 
 	return abs(total)
+
+
+
+	
+	

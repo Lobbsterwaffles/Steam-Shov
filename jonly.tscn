@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dnkoq8b8nhrnw"]
 
+[ext_resource type="Script" uid="uid://dj8l3lm13ejgq" path="res://game.gd" id="1_hy2x5"]
 [ext_resource type="Shader" uid="uid://b3721yt4sxkjv" path="res://scroll.gdshader" id="1_ma3ou"]
 [ext_resource type="Texture2D" uid="uid://cd0rk0fsf0ea4" path="res://graphics/cabin.png" id="1_x3o0k"]
 [ext_resource type="Texture2D" uid="uid://dy2jjh1f5uq28" path="res://graphics/clouds.png" id="2_1gxae"]
@@ -25,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bqlb1f5g2qprm" path="res://graphics/needle.png" id="22_pwk5d"]
 [ext_resource type="Script" uid="uid://5fugxflkihgu" path="res://lever_simple_marker.gd" id="24_7gsng"]
 [ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="25_6ihbu"]
+[ext_resource type="Texture2D" uid="uid://c3ljma263w2bh" path="res://graphics/shoveMenu.png" id="26_htn8h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
@@ -102,6 +104,7 @@ size = Vector2(82.823425, 20)
 size = Vector2(116, 20)
 
 [node name="Node2D" type="Node2D" unique_id=1108412309]
+script = ExtResource("1_hy2x5")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1988624965]
 offset_left = -493.0
@@ -391,3 +394,67 @@ script = ExtResource("24_7gsng")
 unique_name_in_owner = true
 position = Vector2(366.66666, 40.170937)
 script = ExtResource("25_6ihbu")
+
+[node name="PauseMenu" type="Control" parent="." unique_id=1889025290]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu" unique_id=1585720675]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 118.0
+offset_right = 587.0
+offset_bottom = 796.121
+texture = ExtResource("26_htn8h")
+expand_mode = 1
+
+[node name="Unpause" type="Button" parent="PauseMenu/TextureRect" unique_id=546777555]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 47.0
+offset_right = 376.19354
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 38
+text = "RESUME"
+
+[node name="Restart" type="Button" parent="PauseMenu/TextureRect" unique_id=65412864]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 229.0
+offset_right = 376.19354
+offset_bottom = 304.0
+theme_override_font_sizes/font_size = 38
+text = "RESTART"
+
+[node name="Options" type="Button" parent="PauseMenu/TextureRect" unique_id=124645545]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 411.0
+offset_right = 377.0
+offset_bottom = 486.0
+theme_override_font_sizes/font_size = 38
+text = "OPTIONS"
+
+[node name="Quit" type="Button" parent="PauseMenu/TextureRect" unique_id=596028507]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 559.0
+offset_right = 376.19354
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 38
+text = "QUIT"
+
+[node name="Pause" type="Button" parent="." unique_id=2108706364]
+offset_left = -480.0
+offset_top = 17.0
+offset_right = -425.0
+offset_bottom = 48.0
+text = "Pause"
+
+[connection signal="pressed" from="PauseMenu/TextureRect/Unpause" to="." method="unpause"]
+[connection signal="pressed" from="Pause" to="." method="pause"]
