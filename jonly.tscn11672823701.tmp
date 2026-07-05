@@ -23,8 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cwn2pk1felgyx" path="res://graphics/shovedisplay.png" id="20_n0lup"]
 [ext_resource type="Texture2D" uid="uid://b40lov7wgfke1" path="res://graphics/store.png" id="21_qye30"]
 [ext_resource type="Texture2D" uid="uid://bqlb1f5g2qprm" path="res://graphics/needle.png" id="22_pwk5d"]
-[ext_resource type="Script" uid="uid://5fugxflkihgu" path="res://lever_simple_marker.gd" id="24_7gsng"]
-[ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="25_6ihbu"]
+[ext_resource type="Script" uid="uid://cjijbnbi1248f" path="res://needle.gd" id="24_7gsng"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
@@ -328,7 +327,7 @@ position = Vector2(-29, 216)
 script = ExtResource("15_t3quf")
 
 [node name="HUD" type="TextureRect" parent="." unique_id=1739948707]
-offset_left = 666.0
+offset_left = 665.99994
 offset_top = 682.0
 offset_right = 1082.0
 offset_bottom = 1182.0
@@ -347,47 +346,30 @@ expand_mode = 1
 
 [node name="CoalBar" type="ProgressBar" parent="HUD/TextureRect" unique_id=666217027]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 2655.1467
 offset_top = 304.71936
 offset_right = 2974.7307
 offset_bottom = 624.3032
 
-[node name="coal_gauge_needle" type="Sprite2D" parent="HUD" unique_id=1943324019]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD/TextureRect" unique_id=1445332623]
+layout_mode = 0
+offset_left = 2811.2224
+offset_top = 895.5779
+offset_right = 2884.4592
+offset_bottom = 968.8148
+scale = Vector2(1.37, 1.37)
+fill_mode = 4
+radial_fill_degrees = 231.7
+texture_progress = ExtResource("22_pwk5d")
+
+[node name="coal_needle" type="Sprite2D" parent="HUD" unique_id=1943324019]
 unique_name_in_owner = true
+visible = false
 position = Vector2(324.7864, 129.91454)
-rotation = -0.029670598
+scale = Vector2(0.68, 0.68)
 texture = ExtResource("22_pwk5d")
 centered = false
 offset = Vector2(-27.895, -28.185)
-
-[node name="mark_crowd_bot" type="Marker2D" parent="HUD" unique_id=1923578314]
-unique_name_in_owner = true
-position = Vector2(68.37612, 144.44444)
-
-[node name="mark_crowd_top" type="Marker2D" parent="HUD" unique_id=845580741]
-unique_name_in_owner = true
-position = Vector2(68.37613, 23.931633)
-
-[node name="mark_hoist_top" type="Marker2D" parent="HUD" unique_id=404717933]
-unique_name_in_owner = true
-position = Vector2(144.44444, 23.931623)
-
-[node name="mark_hoist_bot" type="Marker2D" parent="HUD" unique_id=388426721]
-unique_name_in_owner = true
-position = Vector2(144.44446, 143.58975)
-
-[node name="crowd_lever" type="Node2D" parent="HUD" unique_id=1330973720]
-unique_name_in_owner = true
-position = Vector2(68.3761, 129.05981)
 script = ExtResource("24_7gsng")
-
-[node name="hoist_lever" type="Node2D" parent="HUD" unique_id=862602115]
-unique_name_in_owner = true
-position = Vector2(144.44444, 129.91454)
-script = ExtResource("24_7gsng")
-
-[node name="money" type="Marker2D" parent="HUD" unique_id=1390117280]
-unique_name_in_owner = true
-position = Vector2(366.66666, 40.170937)
-script = ExtResource("25_6ihbu")
