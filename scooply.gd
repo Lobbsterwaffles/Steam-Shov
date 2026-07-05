@@ -42,14 +42,21 @@ var j_clutch := 0.0
 var j_brake := 0.0
 var j_total := 0.0
 
+var coal := 100.0
+var burning_coal := true
+var efficiency := .1
+
 func _ready() -> void:
 	if sheave != null:
 		_update_geometry(global_position)
 		lastlength = length
 		brake_anchor = length
 	queue_redraw()
-
 	# body_entered.connect(_on_body_entered)
+	
+
+	
+	
 
 
 func _tangent(pa: Vector2, s: float) -> Vector2:
@@ -68,10 +75,14 @@ func _update_geometry(world_pos: Vector2) -> void:
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	var dt = state.step
-
+	
+	_fuel(dt)
+	
 	_update_geometry(state.transform.origin)
 	v_along = state.linear_velocity.dot(forcedir)
-
+	
+	
+	
 	# Lock is a hack to prevent solver jitter from pushing us slowly downwards
 	if brake_amount > 0.8 and absf(length - lastlength) < 0.4:
 		if brake_lock_amount <= 0.0:
@@ -153,5 +164,26 @@ func _draw() -> void:
 	x += 10.0
 	_bar("b", x, j_brake * 1e-3, Color.ORANGE)
 	x += 10.0
+	
+
+func _fuel(dt) -> void:
+	%CoalBar.value = coal
+	print("coal: ", coal)
+	if (Input.is_action_pressed("crowd_in") 
+			or Input.is_action_pressed("crowd_out")
+			or Input.is_action_pressed("hoist_up")):
+			burning_coal = true
+	else:
+		burning_coal = false
+	
+	if burning_coal:
+		coal -= dt * 1/efficiency
+	
+	
+	
+	
+	
+		
+		
 	
 	

@@ -89,7 +89,7 @@ func dirtbucket(n):
 		var area := 0.5 * PI * rm * rm
 		approx_area += area
 		body.mass = area
-		print("A ", area)
+		#print("A ", area)
 		body.position = parent.to_local(%scoop.to_global(center))
 		parent.add_child(body)
 	return approx_area
