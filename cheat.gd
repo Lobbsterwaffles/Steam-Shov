@@ -1,16 +1,17 @@
 extends Panel
 
-@export var upgrades: UpgradeTable 
+var upgrade_rows: Array[Upgrade] = []
 
 var opt : OptionButton
 var selected 
 
 func _ready():
+	upgrade_rows = UpgradeTable.build_rows()
 	%cheat_apply.pressed.connect(apply_selected)
 	
 	opt = %cheat_select_upgrade
 	var optid = 0
-	for r in upgrades.rows:
+	for r in upgrade_rows:
 		opt.add_item(r.id)
 		opt.set_item_metadata(opt.item_count - 1, r)
 	print(MachineState)

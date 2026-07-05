@@ -1,14 +1,17 @@
 extends GridContainer
 
-#@export var upgrades: UpgradeTable 
-var upgrades := ResourceLoader.load("res://table/upgrade_table.tres", "", ResourceLoader.CACHE_MODE_IGNORE_DEEP) as UpgradeTable
+var upgrade_rows: Array[Upgrade] = []
 
 var scn_item = preload("res://shop_item.tscn")
 var family_order = []
 var my_items = [] # parallel to family_order; each entry is {item: Node, row: Upgrade}
 
+func init_upgrade_table():
+	upgrade_rows = UpgradeTable.build_rows()
+
 func _ready():
-	for r in upgrades.rows:
+	init_upgrade_table()
+	for r in upgrade_rows:
 		if not family_order.has(r.family):
 			family_order.append(r.family)
 	build_items()
@@ -33,7 +36,7 @@ func populate():
 	print("Repopulatiung", self)
 
 	var f2u = {}
-	for r in upgrades.rows:
+	for r in upgrade_rows:
 		f2u.get_or_add(r.family, []).append(r)
 	var f2lowesttier = {}
 	for f in f2u:

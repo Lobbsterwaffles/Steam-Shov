@@ -36,7 +36,6 @@
 [ext_resource type="Theme" uid="uid://cg0caupgk0fgu" path="res://ui_theme.tres" id="32_7xl4i"]
 [ext_resource type="Script" uid="uid://cdhvvlo4hvfcf" path="res://cheat.gd" id="32_cdl7u"]
 [ext_resource type="Texture2D" uid="uid://cj1wgdgv4db24" path="res://graphics/UI/helpdiagram.png" id="32_f1koc"]
-[ext_resource type="Resource" uid="uid://d1ig8yxehxk4q" path="res://table/upgrade_table.tres" id="33_gght3"]
 [ext_resource type="Script" uid="uid://iovpq4v16u5y" path="res://crowd_gear.gd" id="35_f1koc"]
 [ext_resource type="Script" uid="uid://psl3lcpct5os" path="res://buy_coal_button.gd" id="36_hn0kn"]
 [ext_resource type="Texture2D" uid="uid://bo3yoym7sdb2s" path="res://graphics/gear_shape.png" id="36_v1mlq"]
@@ -1002,7 +1001,6 @@ offset_top = 691.0
 offset_right = 406.0
 offset_bottom = 875.0
 script = ExtResource("32_cdl7u")
-upgrades = ExtResource("33_gght3")
 
 [node name="cheat_select_upgrade" type="OptionButton" parent="cheat" unique_id=317291642]
 unique_name_in_owner = true
