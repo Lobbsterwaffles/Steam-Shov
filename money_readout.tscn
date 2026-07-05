@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://clwspm6qfv6ng"]
+
+[ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="1_ip7y0"]
+[ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="2_fy182"]
+
+[node name="Node2D" type="Node2D" unique_id=1370899640]
+
+[node name="cost_1" type="TextureRect" parent="." unique_id=770200936]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.5
+offset_top = -34.5
+offset_right = 156.5
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ip7y0")
+
+[node name="money" type="Marker2D" parent="cost_1" unique_id=1441377374]
+unique_name_in_owner = true
+position = Vector2(272.5, 33.5)
+script = ExtResource("2_fy182")
