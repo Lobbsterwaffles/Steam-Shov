@@ -117,6 +117,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 		j_clutch = clampf(j_clutch, 0.0, clutch_force * clutch_amount * dt)
 
 	if brake_amount > 0.0:
+		%hoist_brake_light.visible = true
 		var brake_error := length - brake_anchor
 		var v_hold := 0.0
 
@@ -125,6 +126,8 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 		j_brake = mass * (v_hold - v_along)
 		j_brake = clampf(j_brake, 0.0, brake_force * brake_amount * dt)
+	else:
+		%hoist_brake_light.visible = false
 
 	j_total = j_clutch + j_brake
 
