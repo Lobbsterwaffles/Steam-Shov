@@ -16,7 +16,7 @@ func apply_upgrade(u: Upgrade) -> void:
 	area_capacity += u.bucket_capacity
 
 func _physics_process(dt):
-	if Input.is_action_pressed("bucket_release"):
+	if false and Input.is_action_pressed("bucket_release"): #need to implement bucket swingy
 		if pinjoint:
 			return
 		# add_child(polybody(random_poly(10, 10, 20, 0.1)))
