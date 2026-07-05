@@ -2,10 +2,13 @@ extends RigidBody2D
 
 @export var drive_force := 9000.0
 
+@export var gear_speed_coef := 0.04
+
 var forcedir : Vector2
 var pinjoint : PinJoint2D
 var clutch_phase := 0.0
 const CLUTCH_PRESS_T := 0.23
+const CLUTCH_RELEASE_T := 0.1
 
 func _ready() -> void:
 	MachineState.bind(apply_upgrade)
@@ -46,9 +49,14 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			clutch_phase = 0
 		clutch_phase = move_toward(clutch_phase, 1, dt / CLUTCH_PRESS_T)
 	else:
-		clutch_phase = 0
+		clutch_phase = move_toward(clutch_phase, 0, dt / CLUTCH_RELEASE_T)
 		
+	%crowd_gear.angular_velocity = forcedir.dot(linear_velocity) * gear_speed_coef
 	forcedir *= drive_force * clutch_phase
+
+	var hlpos := 0.5*(1+clutch_phase)
+	%crowd_lever.set_lever_position(hlpos)
+
 	state.apply_central_force(forcedir)
 
 
