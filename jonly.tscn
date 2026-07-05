@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://ex7ytbt4gryu" path="res://graphics/bucketonly.png" id="3_pu31i"]
 [ext_resource type="Script" uid="uid://bm8j5xi87nwi7" path="res://guysprite.gd" id="4_cohnp"]
 [ext_resource type="Texture2D" uid="uid://gilcykkrjqhe" path="res://graphics/guyframesiii/iibofa.png" id="4_oeujs"]
+[ext_resource type="Shader" uid="uid://dpo1w50xf1hj" path="res://slowscroll.gdshader" id="4_swkqi"]
 [ext_resource type="Texture2D" uid="uid://bwunvi0226mvx" path="res://graphics/guyframesiii/iifront.png" id="5_n0lup"]
+[ext_resource type="Texture2D" uid="uid://bm8ipdkxamkwi" path="res://graphics/UI/shovebackground1.png" id="5_s4elw"]
 [ext_resource type="Texture2D" uid="uid://iun3x2orsgdr" path="res://graphics/guyframesiii/iineither.png" id="6_qye30"]
 [ext_resource type="Texture2D" uid="uid://cxpjfwba387uu" path="res://graphics/catma.png" id="8_t3quf"]
 [ext_resource type="Script" uid="uid://diyq2pc5tmsc" path="res://cro2.gd" id="9_7osxe"]
@@ -40,6 +42,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xi0ly"]
+shader = ExtResource("4_swkqi")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3o0k"]
 animations = [{
@@ -140,6 +145,15 @@ offset_bottom = 400.0
 texture = ExtResource("2_1gxae")
 expand_mode = 1
 stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Background" unique_id=219662262]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_xi0ly")
+layout_mode = 0
+offset_top = -84.0
+offset_right = 1793.7778
+offset_bottom = 925.0
+texture = ExtResource("5_s4elw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=730885849]
 position = Vector2(-493, 0)
