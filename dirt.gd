@@ -4,7 +4,7 @@ var cutter
 var clock = 0
 
 @export var min_bite := 10.0
-@export var velocity := Vector2(-20.0, 0.0)
+@export var velocity := Vector2(-5.0, 0.0)
 
 @onready var scoop = %scoop 
 @onready var scoopshape = %scoopshape
