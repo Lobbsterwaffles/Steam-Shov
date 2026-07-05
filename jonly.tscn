@@ -29,8 +29,8 @@
 [ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="25_6ihbu"]
 [ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="25_cdl7u"]
 [ext_resource type="Texture2D" uid="uid://dw847rp0sfuyr" path="res://graphics/UI/Gauge.png" id="26_gght3"]
-[ext_resource type="Texture2D" uid="uid://c3ljma263w2bh" path="res://graphics/shoveMenu.png" id="26_htn8h"]
 [ext_resource type="Texture2D" uid="uid://ieraba7vvy46" path="res://graphics/UI/Help/steamjamHelp.png" id="28_wcugm"]
+[ext_resource type="Texture2D" uid="uid://bqcqnm41g7cxr" path="res://graphics/UI/killscreen.png" id="32_7xl4i"]
 [ext_resource type="Script" uid="uid://cdhvvlo4hvfcf" path="res://cheat.gd" id="32_cdl7u"]
 [ext_resource type="Resource" uid="uid://d1ig8yxehxk4q" path="res://table/upgrade_table.tres" id="33_gght3"]
 
@@ -490,56 +490,46 @@ script = ExtResource("25_6ihbu")
 [node name="PauseMenu" type="Control" parent="." unique_id=1889025290]
 unique_name_in_owner = true
 process_mode = 2
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="PauseMenu" unique_id=1585720675]
+visible = false
 layout_mode = 0
-offset_left = 22.0
-offset_top = 118.0
-offset_right = 587.0
-offset_bottom = 796.121
-texture = ExtResource("26_htn8h")
-expand_mode = 1
+offset_left = -118.0
+offset_top = 165.0
+offset_right = 816.0
+offset_bottom = 635.0
+texture = ExtResource("22_wcugm")
 
 [node name="Unpause" type="Button" parent="PauseMenu/TextureRect" unique_id=546777555]
 layout_mode = 0
-offset_left = 202.0
-offset_top = 47.0
-offset_right = 376.19354
-offset_bottom = 122.0
+offset_left = 118.0
+offset_top = 199.0
+offset_right = 303.0
+offset_bottom = 274.0
 theme_override_font_sizes/font_size = 38
 text = "UNPAUSE"
 
 [node name="Restart" type="Button" parent="PauseMenu/TextureRect" unique_id=65412864]
 layout_mode = 0
-offset_left = 202.0
-offset_top = 229.0
-offset_right = 376.19354
-offset_bottom = 304.0
+offset_left = 390.0
+offset_top = 199.0
+offset_right = 564.19354
+offset_bottom = 274.0
 theme_override_font_sizes/font_size = 38
 text = "RESTART"
 
 [node name="Help" type="Button" parent="PauseMenu/TextureRect" unique_id=124645545]
 layout_mode = 0
-offset_left = 202.0
-offset_top = 411.0
-offset_right = 377.0
-offset_bottom = 486.0
+offset_left = 657.0
+offset_top = 199.0
+offset_right = 832.0
+offset_bottom = 274.0
 theme_override_font_sizes/font_size = 38
 text = "HELP ME"
-
-[node name="Quit" type="Button" parent="PauseMenu/TextureRect" unique_id=596028507]
-layout_mode = 0
-offset_left = 202.0
-offset_top = 559.0
-offset_right = 376.19354
-offset_bottom = 634.0
-theme_override_font_sizes/font_size = 38
-text = "QUIT"
 
 [node name="Pause" type="Button" parent="." unique_id=2108706364]
 offset_left = -480.0
@@ -573,6 +563,33 @@ offset_right = 780.25806
 offset_bottom = 864.0
 theme_override_font_sizes/font_size = 29
 text = "CLOSE"
+
+[node name="kill_screen" type="Control" parent="." unique_id=113495379]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="kill_screen" unique_id=779880097]
+layout_mode = 0
+offset_left = -396.0
+offset_top = -4.0
+offset_right = 1072.3333
+offset_bottom = 877.0
+texture = ExtResource("32_7xl4i")
+
+[node name="again_yes" type="Button" parent="kill_screen/TextureRect" unique_id=602569164]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 404.0
+offset_right = 816.19354
+offset_bottom = 479.0
+theme_override_font_sizes/font_size = 38
+text = "YES
+"
 
 [node name="cheat" type="Panel" parent="." unique_id=1996473990]
 offset_left = 45.0
@@ -622,3 +639,4 @@ grow_vertical = 0
 [connection signal="pressed" from="PauseMenu/TextureRect/Help" to="." method="help"]
 [connection signal="pressed" from="Pause" to="." method="pause"]
 [connection signal="pressed" from="help_Screen/TextureRect/close_help" to="." method="closehelp"]
+[connection signal="pressed" from="kill_screen/TextureRect/again_yes" to="." method="restart"]
