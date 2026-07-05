@@ -457,4 +457,5 @@ offset_bottom = 48.0
 text = "Pause"
 
 [connection signal="pressed" from="PauseMenu/TextureRect/Unpause" to="." method="unpause"]
+[connection signal="pressed" from="PauseMenu/TextureRect/Restart" to="." method="restart"]
 [connection signal="pressed" from="Pause" to="." method="pause"]

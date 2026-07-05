@@ -13,6 +13,9 @@ func unpause():
 	%PauseMenu.hide()
 	get_tree().paused = false
 	
+func restart():
+	get_tree().paused = false
+	get_tree().reload_current_scene()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
