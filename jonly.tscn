@@ -356,6 +356,10 @@ script = ExtResource("13_7osxe")
 unique_name_in_owner = true
 polygon = PackedVector2Array(-438, 896, 1126, 885, 1119, 45, 515.1, 35.99996, 642.69995, 617.89996, -442, 665)
 
+[node name="visualdirt" type="Polygon2D" parent="World" unique_id=1655667012]
+unique_name_in_owner = true
+color = Color(0.24, 0.12991999, 0.0864, 1)
+
 [node name="minecart" type="StaticBody2D" parent="." unique_id=1387034368]
 position = Vector2(232, 584)
 collision_layer = 1793

@@ -13,6 +13,7 @@ var clock = 0
 func _ready():
 	body_entered.connect(_enter)
 	body_exited.connect(_exit)
+	%visualdirt.polygon = %poly.polygon
 
 func _enter(other):
 	if other == arm:
@@ -52,6 +53,7 @@ func _physics_process(dt):
 	if clips.is_empty():
 		return
 	%poly.set_deferred("polygon", clips[0])
+	%visualdirt.set_deferred("polygon", clips[0])
 	queue_redraw()
 
 func _draw():
