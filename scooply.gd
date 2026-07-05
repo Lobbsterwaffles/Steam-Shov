@@ -54,15 +54,12 @@ func _ready() -> void:
 		lastlength = length
 		brake_anchor = length
 	queue_redraw()
-	# body_entered.connect(_on_body_entered)
 
 func apply_upgrade(u: Upgrade) -> void:
 	engine_speed += u.hoist_engine_speed
 	clutch_force += u.hoist_clutch_force
 	brake_force += u.hoist_brake_force
 	efficiency += u.efficiency
-	
-
 
 func _tangent(pa: Vector2, s: float) -> Vector2:
 	var alpha := acos(myradius / pa.length())
@@ -185,7 +182,7 @@ func update_levers():
 	%hoist_lever.global_position = %mark_hoist_bot.global_position.lerp(%mark_hoist_top.global_position, clutch_amount)
 
 func _fuel(dt) -> void:
-	%CoalBar.value = coal
+	# %CoalBar.value = coal
 	
 	# print("coal: ", coal)
 	if (Input.is_action_pressed("crowd_in") 

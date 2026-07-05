@@ -31,6 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://dw847rp0sfuyr" path="res://graphics/UI/Gauge.png" id="26_gght3"]
 [ext_resource type="Texture2D" uid="uid://c3ljma263w2bh" path="res://graphics/shoveMenu.png" id="26_htn8h"]
 [ext_resource type="Texture2D" uid="uid://ieraba7vvy46" path="res://graphics/UI/Help/steamjamHelp.png" id="28_wcugm"]
+[ext_resource type="Script" uid="uid://cdhvvlo4hvfcf" path="res://cheat.gd" id="32_cdl7u"]
+[ext_resource type="Resource" uid="uid://d1ig8yxehxk4q" path="res://table/upgrade_table.tres" id="33_gght3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
@@ -560,6 +562,49 @@ offset_right = 780.25806
 offset_bottom = 864.0
 theme_override_font_sizes/font_size = 29
 text = "CLOSE"
+
+[node name="cheat" type="Panel" parent="." unique_id=1996473990]
+offset_left = 45.0
+offset_top = 691.0
+offset_right = 406.0
+offset_bottom = 875.0
+script = ExtResource("32_cdl7u")
+upgrades = ExtResource("33_gght3")
+
+[node name="cheat_select_upgrade" type="OptionButton" parent="cheat" unique_id=317291642]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 16.0
+offset_top = 27.0
+offset_right = 136.0
+offset_bottom = 77.0
+
+[node name="cheat_apply" type="Button" parent="cheat" unique_id=431922098]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -144.0
+offset_top = 37.0
+offset_right = -93.0
+offset_bottom = 68.0
+grow_horizontal = 0
+text = "apply"
+
+[node name="cheat_upgrade_list" type="HFlowContainer" parent="cheat" unique_id=710478963]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -148.5
+offset_top = -80.0
+offset_right = 148.5
+grow_horizontal = 2
+grow_vertical = 0
 
 [connection signal="pressed" from="PauseMenu/TextureRect/Unpause" to="." method="unpause"]
 [connection signal="pressed" from="PauseMenu/TextureRect/Restart" to="." method="restart"]
