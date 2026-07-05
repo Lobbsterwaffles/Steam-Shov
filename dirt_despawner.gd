@@ -5,10 +5,18 @@ extends Area2D
 var despawning := 1.0
 var despawn_max := 1.0
 var pending_despawn := []
-
+var suckdown := 5.0
 
 func _ready():
 	body_entered.connect(despawn)
+	MachineState.bind(apply_upgrade)
+	
+	
+func apply_upgrade(u: Upgrade) -> void:
+	
+	suckdown += u.suckdown
+	
+
 	
 	
 func despawn(body):
@@ -18,7 +26,7 @@ func despawn(body):
 
 	
 func _process(delta: float) -> void:
-	despawning += delta * 5
+	despawning += delta * suckdown
 	if despawning >= despawn_max:
 		despawning  = despawn_max
 	while despawning > 0 and not pending_despawn.is_empty():

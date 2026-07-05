@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://cf4nu21g6fg05" path="res://graphics/UI/HUD.png" id="22_wcugm"]
 [ext_resource type="Texture2D" uid="uid://cr4p8r813qe1" path="res://graphics/UI/store.png" id="23_rmmu8"]
 [ext_resource type="Script" uid="uid://5fugxflkihgu" path="res://lever_simple_marker.gd" id="24_7gsng"]
+[ext_resource type="Texture2D" uid="uid://bx20hk148dc2d" path="res://graphics/dirttexture.png" id="24_bv3ij"]
 [ext_resource type="Texture2D" uid="uid://76m2uj5wlwbi" path="res://graphics/UI/plaque.png" id="24_rvxmr"]
 [ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="25_6ihbu"]
 [ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="25_cdl7u"]
@@ -357,11 +358,12 @@ script = ExtResource("13_7osxe")
 
 [node name="poly" type="CollisionPolygon2D" parent="World" unique_id=596824375]
 unique_name_in_owner = true
-polygon = PackedVector2Array(-438, 896, 3463, 865, 3451, 37, 736, 433, 662, 645, -442, 665)
+polygon = PackedVector2Array(-438, 896, 3463, 865, 3354, 62, 1622, 252, 482, 417, 455, 629, -442, 665)
 
 [node name="visualdirt" type="Polygon2D" parent="World" unique_id=1655667012]
 unique_name_in_owner = true
-color = Color(0.24, 0.12991999, 0.0864, 1)
+texture_repeat = 2
+texture = ExtResource("24_bv3ij")
 
 [node name="minecart" type="StaticBody2D" parent="." unique_id=1387034368]
 position = Vector2(232, 584)
@@ -406,9 +408,10 @@ position = Vector2(-93, 73)
 script = ExtResource("15_t3quf")
 eye_white = Color(0.94509804, 0.79607844, 0, 1)
 eye_liner = Color(0.92535293, 0.9253528, 0.9253529, 1)
-ellipse_major_radius = 2.145
-pupil_major_radius = 2.0
-pupil_minor_radius = 4.0
+ellipse_major_radius = 2.0
+ellipse_minor_radius = 3.0
+pupil_major_radius = 0.5
+pupil_minor_radius = 2.0
 pupil_edge_offset_frac = 0.0
 
 [node name="HUD" type="TextureRect" parent="." unique_id=1739948707]
@@ -637,43 +640,48 @@ theme_override_font_sizes/font_size = 14
 text = "hoist"
 metadata/_edit_use_anchors_ = true
 
+[node name="crowd_brake_light" type="Marker2D" parent="HUD" unique_id=855915307]
+unique_name_in_owner = true
+visible = false
+position = Vector2(67.52136, 183.76068)
+scale = Vector2(0.36867937, 0.36867937)
+script = ExtResource("38_t2l85")
+
+[node name="hoist_brake_light" type="Marker2D" parent="HUD" unique_id=148392592]
+unique_name_in_owner = true
+visible = false
+position = Vector2(144.44446, 183.76068)
+scale = Vector2(0.36867937, 0.36867937)
+script = ExtResource("38_t2l85")
+
 [node name="brake1" type="TextureRect" parent="HUD" unique_id=1246006540]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.10475028
 anchor_top = 0.7632655
-anchor_right = 0.21815461
-anchor_bottom = 0.9886265
-offset_right = 80.809044
-offset_bottom = 80.80904
+anchor_right = 0.10475031
+anchor_bottom = 0.76326555
+offset_left = -2.670288e-05
+offset_top = -3.0517578e-05
+offset_right = 127.99996
+offset_bottom = 127.999954
 scale = Vector2(0.3686794, 0.3686794)
 texture = ExtResource("37_tc8o3")
 metadata/_edit_use_anchors_ = true
-
-[node name="crowd_brake_light" type="Marker2D" parent="HUD/brake1" unique_id=855915307]
-unique_name_in_owner = true
-visible = false
-position = Vector2(64.91168, 64.91175)
-script = ExtResource("38_t2l85")
 
 [node name="brake2" type="TextureRect" parent="HUD" unique_id=1748716099]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2896037
 anchor_top = 0.7632655
-anchor_right = 0.40300807
-anchor_bottom = 0.9886265
-offset_right = 80.809044
-offset_bottom = 80.80904
+anchor_right = 0.28960377
+anchor_bottom = 0.76326555
+offset_top = -3.0517578e-05
+offset_right = 127.99999
+offset_bottom = 127.999954
 scale = Vector2(0.3686794, 0.3686794)
 texture = ExtResource("37_tc8o3")
 metadata/_edit_use_anchors_ = true
-
-[node name="hoist_brake_light" type="Marker2D" parent="HUD/brake2" unique_id=148392592]
-unique_name_in_owner = true
-visible = false
-position = Vector2(64.91175, 64.91175)
-script = ExtResource("38_t2l85")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=2128918538]
 offset_left = -430.0
@@ -765,9 +773,9 @@ grow_vertical = 2
 process_mode = 2
 layout_mode = 0
 offset_left = 461.0
-offset_top = 621.0
+offset_top = 638.0
 offset_right = 573.25806
-offset_bottom = 681.0
+offset_bottom = 698.0
 theme_override_font_sizes/font_size = 29
 text = "CLOSE"
 
@@ -779,9 +787,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -383.0
-offset_top = -308.0
+offset_top = -347.0
 offset_right = 413.0
-offset_bottom = 184.0
+offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Use 'q' to hoist the bucket.
@@ -789,6 +797,8 @@ Use 'space' to lock the hoist.
 
 Use 'o' to pull the crowd IN.
 Use 'p' to push the crowd OUT.
+Use 'shift' to lock the crowd.
+
 Use 'b' to release the dirt from the bucket.
 
 REMEMBER: Be careful with the equipment!

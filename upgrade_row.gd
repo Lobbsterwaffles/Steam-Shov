@@ -11,3 +11,4 @@ extends Resource
 @export var crowd_drive_force : float
 @export var bucket_capacity : float
 @export var efficiency : float
+@export var suckdown : float
