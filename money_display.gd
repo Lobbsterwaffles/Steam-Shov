@@ -20,4 +20,10 @@ func add(x: int):
 	amount += x
 	queue_redraw()
 
+func try_pay_cost(x: int):
+	if amount < x:
+		return false
+	amount -= x
+	queue_redraw()
+	return true
 	

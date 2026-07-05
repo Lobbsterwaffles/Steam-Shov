@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://cj1wgdgv4db24" path="res://graphics/UI/helpdiagram.png" id="32_f1koc"]
 [ext_resource type="Resource" uid="uid://d1ig8yxehxk4q" path="res://table/upgrade_table.tres" id="33_gght3"]
 [ext_resource type="Script" uid="uid://iovpq4v16u5y" path="res://crowd_gear.gd" id="35_f1koc"]
+[ext_resource type="Script" uid="uid://psl3lcpct5os" path="res://buy_coal_button.gd" id="36_hn0kn"]
 [ext_resource type="Texture2D" uid="uid://bo3yoym7sdb2s" path="res://graphics/gear_shape.png" id="36_v1mlq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
@@ -550,6 +551,28 @@ position = Vector2(368.37607, 37.606834)
 script = ExtResource("25_6ihbu")
 digit_spacing = 28.0
 
+[node name="label_coal_nomoney" type="Label" parent="HUD" unique_id=680008181]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -292.3077
+offset_top = 17.093994
+offset_right = 42.69229
+offset_bottom = 69.093994
+theme = ExtResource("32_7xl4i")
+text = "Not enough money!"
+
+[node name="label_coal_full" type="Label" parent="HUD" unique_id=409991110]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -235.89745
+offset_top = 13.675191
+offset_right = 99.102554
+offset_bottom = 65.67519
+theme = ExtResource("32_7xl4i")
+text = "Coal is full!"
+
 [node name="buy_coal" type="TextureRect" parent="HUD" unique_id=1168356268]
 layout_mode = 0
 offset_left = -159.82907
@@ -570,6 +593,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/hover = SubResource("StyleBoxFlat_rngr4")
 text = "BUY COAL $25"
 flat = true
+script = ExtResource("36_hn0kn")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=2128918538]
 offset_left = -430.0
