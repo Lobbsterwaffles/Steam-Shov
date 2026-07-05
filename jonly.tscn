@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://s5k4kh6anw86" path="res://door.gd" id="13_cohnp"]
 [ext_resource type="Script" uid="uid://hsvi8bao0mcw" path="res://eyes.gd" id="15_t3quf"]
 [ext_resource type="Texture2D" uid="uid://de0o37vvkshp7" path="res://graphics/minecart.png" id="18_oeujs"]
+[ext_resource type="Texture2D" uid="uid://cwn2pk1felgyx" path="res://graphics/shovedisplay.png" id="20_n0lup"]
+[ext_resource type="Texture2D" uid="uid://b40lov7wgfke1" path="res://graphics/store.png" id="21_qye30"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
@@ -307,3 +309,21 @@ offset_bottom = 69.5
 [node name="eyes" type="Node2D" parent="." unique_id=1213992888]
 position = Vector2(-29, 216)
 script = ExtResource("15_t3quf")
+
+[node name="HUD" type="TextureRect" parent="." unique_id=1739948707]
+offset_left = 665.99994
+offset_top = 682.0
+offset_right = 1082.0
+offset_bottom = 1182.0
+scale = Vector2(1.17, 1.17)
+texture = ExtResource("20_n0lup")
+
+[node name="TextureRect" type="TextureRect" parent="HUD" unique_id=982162618]
+layout_mode = 0
+offset_left = -990.59827
+offset_top = -305.12817
+offset_right = -56.598267
+offset_bottom = 815.8718
+scale = Vector2(0.46, 0.46)
+texture = ExtResource("21_qye30")
+expand_mode = 1
