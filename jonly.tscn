@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="25_cdl7u"]
 [ext_resource type="Texture2D" uid="uid://dw847rp0sfuyr" path="res://graphics/UI/Gauge.png" id="26_gght3"]
 [ext_resource type="Texture2D" uid="uid://ieraba7vvy46" path="res://graphics/UI/Help/steamjamHelp.png" id="28_wcugm"]
+[ext_resource type="Script" uid="uid://cpi4680ouh48b" path="res://store_grid.gd" id="29_dqk33"]
 [ext_resource type="Texture2D" uid="uid://bqcqnm41g7cxr" path="res://graphics/UI/killscreen.png" id="32_7xl4i"]
 [ext_resource type="Script" uid="uid://cdhvvlo4hvfcf" path="res://cheat.gd" id="32_cdl7u"]
 [ext_resource type="Resource" uid="uid://d1ig8yxehxk4q" path="res://table/upgrade_table.tres" id="33_gght3"]
@@ -540,6 +541,18 @@ offset_right = -0.17105103
 offset_bottom = 145.2991
 texture = ExtResource("22_wcugm")
 expand_mode = 1
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=2128918538]
+offset_left = -430.0
+offset_top = 727.0
+offset_right = -38.0
+offset_bottom = 892.0
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 4
+columns = 2
+script = ExtResource("29_dqk33")
+upgrades = ExtResource("33_gght3")
 
 [node name="PauseMenu" type="Control" parent="." unique_id=1889025290]
 unique_name_in_owner = true

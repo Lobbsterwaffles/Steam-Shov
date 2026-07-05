@@ -3,13 +3,60 @@
 [ext_resource type="PackedScene" uid="uid://clwspm6qfv6ng" path="res://money_readout.tscn" id="1_wxfep"]
 [ext_resource type="Texture2D" uid="uid://76m2uj5wlwbi" path="res://graphics/UI/plaque.png" id="2_d8bsp"]
 
-[node name="Node2D" type="Node2D" unique_id=655382720]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wxfep"]
+texture = ExtResource("2_d8bsp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d8bsp"]
+texture = ExtResource("2_d8bsp")
+modulate_color = Color(0.78, 0.78, 0.78, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v846v"]
+texture = ExtResource("2_d8bsp")
+modulate_color = Color(0.89, 0.89, 0.89, 1)
+
+[node name="Node2D" type="Control" unique_id=1163521622]
+custom_minimum_size = Vector2(190, 90)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 187.0
+offset_bottom = 87.0
 
 [node name="cost_readout" parent="." unique_id=1370899640 instance=ExtResource("1_wxfep")]
+layout_mode = 1
+anchor_left = 0.02631579
+anchor_top = 0.0
+anchor_right = 0.9736842
+anchor_bottom = 0.4888889
+grow_horizontal = 2
 
 [node name="plaque" type="TextureRect" parent="." unique_id=1736168181]
-offset_left = -159.0
-offset_top = 43.0
-offset_right = 154.0
-offset_bottom = 112.0
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -39.0
+offset_right = 90.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("2_d8bsp")
+stretch_mode = 3
+
+[node name="button" type="Button" parent="." unique_id=170780964]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 0.005263158
+anchor_top = 0.5222222
+anchor_right = 0.99473685
+anchor_bottom = 1.0444444
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_wxfep")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d8bsp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_v846v")
+metadata/_edit_use_anchors_ = true

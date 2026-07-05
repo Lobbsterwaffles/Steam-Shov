@@ -3,23 +3,27 @@
 [ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="1_ip7y0"]
 [ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="2_fy182"]
 
-[node name="Node2D" type="Node2D" unique_id=1370899640]
+[node name="Node2D" type="Control" unique_id=1237588372]
+custom_minimum_size = Vector2(180, 44)
+layout_mode = 3
+anchor_left = -0.004340278
+anchor_top = -0.015432099
+anchor_right = 0.1501736
+anchor_bottom = 0.05246913
+metadata/_edit_use_anchors_ = true
 
 [node name="cost_1" type="TextureRect" parent="." unique_id=770200936]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -156.5
-offset_top = -34.5
-offset_right = 156.5
-offset_bottom = 34.5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ip7y0")
+stretch_mode = 3
 
 [node name="money" type="Marker2D" parent="cost_1" unique_id=1441377374]
 unique_name_in_owner = true
-position = Vector2(272.5, 33.5)
+position = Vector2(156, 22)
 script = ExtResource("2_fy182")
+digit_spacing = 34.0

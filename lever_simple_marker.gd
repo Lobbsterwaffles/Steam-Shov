@@ -16,5 +16,5 @@ func _draw():
 	var top := Vector2(0, -0.5*height)
 
 	draw_line(bot, top, track_color, track_width, true)
-	draw_circle(bot.lerp(top, lever_position), marker_radius, marker_color, -1, true)
+	draw_circle(bot.lerp(top, lever_position), marker_radius, marker_color, true, -1, true)
 	# draw_circle(Vector2.ZERO, 10, Color.YELLOW)

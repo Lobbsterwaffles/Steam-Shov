@@ -2,7 +2,10 @@ extends Marker2D
 
 @export var digit_spacing := 24.0
 
-var amount := 0
+var amount := 0:
+	set(value):
+		amount = value
+		queue_redraw()
 
 func _draw():
 	var font := ThemeDB.fallback_font
