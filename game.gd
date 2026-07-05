@@ -5,7 +5,11 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().paused = true
+	%intro_screen.show()
 	pass # Replace with function body.
+
+
 
 func pause():
 	get_tree().paused = true
@@ -28,6 +32,13 @@ func closehelp():
 func game_over():
 	get_tree().paused = true
 	%kill_screen.show()
+
+func new_game():
+	get_tree().paused = false
+	%intro_screen.hide()
+	
+
+	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -30,7 +30,6 @@
 [ext_resource type="Script" uid="uid://dugj4fffp6q61" path="res://money_display.gd" id="25_6ihbu"]
 [ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="25_cdl7u"]
 [ext_resource type="Texture2D" uid="uid://dw847rp0sfuyr" path="res://graphics/UI/Gauge.png" id="26_gght3"]
-[ext_resource type="Script" uid="uid://cpi4680ouh48b" path="res://store_grid.gd" id="29_dqk33"]
 [ext_resource type="Theme" uid="uid://cg0caupgk0fgu" path="res://ui_theme.tres" id="32_7xl4i"]
 [ext_resource type="Script" uid="uid://cdhvvlo4hvfcf" path="res://cheat.gd" id="32_cdl7u"]
 [ext_resource type="Texture2D" uid="uid://cj1wgdgv4db24" path="res://graphics/UI/helpdiagram.png" id="32_f1koc"]
@@ -119,9 +118,7 @@ size = Vector2(82.823425, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7msxs"]
 size = Vector2(116, 20)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rngr4"]
-
-[node name="game" type="Node2D" unique_id=1108412309]
+[node name="Node2D" type="Node2D" unique_id=1108412309]
 script = ExtResource("1_hy2x5")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1988624965]
@@ -534,7 +531,6 @@ script = ExtResource("24_7gsng")
 unique_name_in_owner = true
 position = Vector2(368.37607, 37.606834)
 script = ExtResource("25_6ihbu")
-digit_spacing = 28.0
 
 [node name="buy_coal" type="TextureRect" parent="HUD" unique_id=1168356268]
 layout_mode = 0
@@ -544,30 +540,6 @@ offset_right = -0.17105103
 offset_bottom = 145.2991
 texture = ExtResource("22_wcugm")
 expand_mode = 1
-
-[node name="buy_coal_button" type="Button" parent="HUD/buy_coal" unique_id=571206065]
-layout_mode = 0
-offset_left = -0.85469365
-offset_top = 11.111127
-offset_right = 160.14531
-offset_bottom = 71.11114
-theme = ExtResource("32_7xl4i")
-theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxFlat_rngr4")
-text = "BUY COAL $25"
-flat = true
-
-[node name="GridContainer" type="GridContainer" parent="." unique_id=2128918538]
-offset_left = -430.0
-offset_top = 727.0
-offset_right = -38.0
-offset_bottom = 892.0
-size_flags_horizontal = 4
-theme_override_constants/h_separation = 18
-theme_override_constants/v_separation = 4
-columns = 2
-script = ExtResource("29_dqk33")
-upgrades = ExtResource("33_gght3")
 
 [node name="PauseMenu" type="Control" parent="." unique_id=1889025290]
 unique_name_in_owner = true
@@ -802,7 +774,6 @@ offset_right = 861.99994
 offset_bottom = 688.0
 
 [node name="play_button" type="Button" parent="intro_screen/panel" unique_id=729876132]
-process_mode = 2
 layout_mode = 0
 offset_left = 390.0
 offset_top = 484.0
@@ -835,7 +806,6 @@ Don't run into the dirt.
 horizontal_alignment = 1
 
 [node name="cheat" type="Panel" parent="." unique_id=1996473990]
-visible = false
 offset_left = 45.0
 offset_top = 691.0
 offset_right = 406.0
@@ -884,4 +854,3 @@ grow_vertical = 0
 [connection signal="pressed" from="Pause" to="." method="pause"]
 [connection signal="pressed" from="help_Screen/TextureRect/close_help" to="." method="closehelp"]
 [connection signal="pressed" from="kill_screen/panel/again_yes" to="." method="restart"]
-[connection signal="pressed" from="intro_screen/panel/play_button" to="." method="new_game"]
