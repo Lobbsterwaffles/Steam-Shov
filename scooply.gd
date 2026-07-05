@@ -46,10 +46,11 @@ var j_total := 0.0
 var coal_capacity := 100.0
 var coal := coal_capacity
 var burning_coal := true
-var efficiency := .1
+var efficiency := .3
 
 func _ready() -> void:
 	MachineState.bind(apply_upgrade)
+
 	if sheave != null:
 		_update_geometry(global_position)
 		lastlength = length
@@ -57,10 +58,13 @@ func _ready() -> void:
 	queue_redraw()
 
 func apply_upgrade(u: Upgrade) -> void:
+	print("upgrade applied")
 	engine_speed += u.hoist_engine_speed
 	clutch_force += u.hoist_clutch_force
 	brake_force += u.hoist_brake_force
 	efficiency += u.efficiency
+	print(engine_speed)
+	print(u.hoist_engine_speed)
 
 func _tangent(pa: Vector2, s: float) -> Vector2:
 	var alpha := acos(myradius / pa.length())

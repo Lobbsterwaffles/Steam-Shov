@@ -9,6 +9,7 @@ var clock = 0
 @onready var scoop = %scoop 
 @onready var scoopshape = %scoopshape
 @onready var arm = %arm
+@onready var baselink = %baselink
 
 func _ready():
 	body_entered.connect(_enter)
@@ -16,7 +17,9 @@ func _ready():
 
 func _enter(other):
 	if other == arm:
-		get_tree().current_scene.game_over()
+		get_tree().current_scene.game_over_dirt()
+	if other == baselink:
+		get_tree().current_scene.game_over_dirt()
 	if other != scoop:
 		return
 	cutter = scoopshape

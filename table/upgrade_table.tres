@@ -8,7 +8,9 @@ script = ExtResource("1_rngr4")
 id = "Faster Hoist"
 family = "Hoist"
 cost = 25.0
-hoist_engine_speed = 25.0
+hoist_engine_speed = 105.0
+hoist_clutch_force = 1.0
+hoist_brake_force = 50000.0
 
 [sub_resource type="Resource" id="Resource_bsr8j"]
 script = ExtResource("1_rngr4")

@@ -29,9 +29,13 @@ func help():
 func closehelp():
 	%help_Screen.hide()
 	
-func game_over():
+func game_over_coal():
 	get_tree().paused = true
-	%kill_screen.show()
+	%kill_screen_coal.show()
+	
+func game_over_dirt():
+	get_tree().paused =true
+	%kill_screen_dirt.show()
 
 func new_game():
 	get_tree().paused = false
@@ -44,7 +48,7 @@ func new_game():
 func _process(delta: float) -> void:
 	
 	if %scoop.coal <= 0:
-		game_over()
+		game_over_coal()
 	
 	pass
 

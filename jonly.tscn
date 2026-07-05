@@ -83,7 +83,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hchs4"]
-size = Vector2(65, 69)
+size = Vector2(65, 112.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeuc0"]
 size = Vector2(450, 38.819397)
@@ -186,9 +186,12 @@ scale = Vector2(0.12995428, 0.13567072)
 texture = ExtResource("8_t3quf")
 
 [node name="baselink" type="StaticBody2D" parent="." unique_id=2073641110]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="baselink" unique_id=1832756638]
-position = Vector2(96, 408)
+position = Vector2(96, 429.75)
 shape = SubResource("RectangleShape2D_hchs4")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="baselink" unique_id=443912764]
@@ -352,7 +355,7 @@ script = ExtResource("13_7osxe")
 
 [node name="poly" type="CollisionPolygon2D" parent="World" unique_id=596824375]
 unique_name_in_owner = true
-polygon = PackedVector2Array(-438, 896, 1126, 885, 1119, 45, 515.1, 35.99996, 642.69995, 617.89996, -442, 665)
+polygon = PackedVector2Array(-438, 896, 3463, 865, 3451, 37, 736, 433, 662, 645, -442, 665)
 
 [node name="minecart" type="StaticBody2D" parent="." unique_id=1387034368]
 position = Vector2(232, 584)
@@ -605,7 +608,6 @@ theme_override_constants/h_separation = 18
 theme_override_constants/v_separation = 4
 columns = 2
 script = ExtResource("29_dqk33")
-upgrades = ExtResource("33_gght3")
 
 [node name="PauseMenu" type="Control" parent="." unique_id=1889025290]
 unique_name_in_owner = true
@@ -780,7 +782,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 text = "CAT"
 
-[node name="kill_screen" type="Control" parent="." unique_id=113495379]
+[node name="kill_screen_coal" type="Control" parent="." unique_id=113495379]
 unique_name_in_owner = true
 process_mode = 2
 visible = false
@@ -790,14 +792,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("32_7xl4i")
 
-[node name="panel" type="Panel" parent="kill_screen" unique_id=38447095]
+[node name="panel" type="Panel" parent="kill_screen_coal" unique_id=38447095]
 layout_mode = 0
 offset_left = -118.0
 offset_top = 100.0
 offset_right = 861.99994
 offset_bottom = 688.0
 
-[node name="again_yes" type="Button" parent="kill_screen/panel" unique_id=602569164]
+[node name="again_yes" type="Button" parent="kill_screen_coal/panel" unique_id=602569164]
 layout_mode = 0
 offset_left = 390.0
 offset_top = 484.0
@@ -807,7 +809,7 @@ theme_override_font_sizes/font_size = 38
 text = "YES
 "
 
-[node name="Label" type="Label" parent="kill_screen/panel" unique_id=2062731927]
+[node name="Label" type="Label" parent="kill_screen_coal/panel" unique_id=2062731927]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -819,8 +821,52 @@ offset_bottom = 408.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 81
 text = "GAME OVER
-
+You ran out of Coal...
 Try again?"
+horizontal_alignment = 1
+
+[node name="kill_screen_dirt" type="Control" parent="." unique_id=1706045959]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("32_7xl4i")
+
+[node name="panel" type="Panel" parent="kill_screen_dirt" unique_id=2130025669]
+layout_mode = 0
+offset_left = -118.0
+offset_top = 100.0
+offset_right = 861.99994
+offset_bottom = 688.0
+
+[node name="again_yes" type="Button" parent="kill_screen_dirt/panel" unique_id=101331300]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 484.0
+offset_right = 564.19354
+offset_bottom = 559.0
+theme_override_font_sizes/font_size = 38
+text = "YES
+"
+
+[node name="Label" type="Label" parent="kill_screen_dirt/panel" unique_id=380871811]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -196.0
+offset_top = 93.0
+offset_right = 196.00003
+offset_bottom = 408.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 81
+text = "GAME OVER
+You ran into the dirt...
+Try again?"
+horizontal_alignment = 1
 
 [node name="intro_screen" type="Control" parent="." unique_id=2015515911]
 unique_name_in_owner = true
@@ -921,5 +967,6 @@ grow_vertical = 0
 [connection signal="pressed" from="PauseMenu/TextureRect/Help" to="." method="help"]
 [connection signal="pressed" from="Pause" to="." method="pause"]
 [connection signal="pressed" from="help_Screen/TextureRect/close_help" to="." method="closehelp"]
-[connection signal="pressed" from="kill_screen/panel/again_yes" to="." method="restart"]
+[connection signal="pressed" from="kill_screen_coal/panel/again_yes" to="." method="restart"]
+[connection signal="pressed" from="kill_screen_dirt/panel/again_yes" to="." method="restart"]
 [connection signal="pressed" from="intro_screen/panel/play_button" to="." method="new_game"]

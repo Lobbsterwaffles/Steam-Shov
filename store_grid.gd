@@ -1,6 +1,7 @@
 extends GridContainer
 
-@export var upgrades: UpgradeTable 
+#@export var upgrades: UpgradeTable 
+var upgrades := ResourceLoader.load("res://table/upgrade_table.tres", "", ResourceLoader.CACHE_MODE_IGNORE_DEEP) as UpgradeTable
 
 var scn_item = preload("res://shop_item.tscn")
 var family_order = []
