@@ -34,6 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://bqcqnm41g7cxr" path="res://graphics/UI/killscreen.png" id="32_7xl4i"]
 [ext_resource type="Script" uid="uid://cdhvvlo4hvfcf" path="res://cheat.gd" id="32_cdl7u"]
 [ext_resource type="Resource" uid="uid://d1ig8yxehxk4q" path="res://table/upgrade_table.tres" id="33_gght3"]
+[ext_resource type="Script" uid="uid://iovpq4v16u5y" path="res://crowd_gear.gd" id="35_f1koc"]
+[ext_resource type="Texture2D" uid="uid://bo3yoym7sdb2s" path="res://graphics/gear_shape.png" id="36_v1mlq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7msxs"]
 shader = ExtResource("1_ma3ou")
@@ -183,6 +185,8 @@ rotation = -0.9599311
 collision_layer = 2
 collision_mask = 3
 lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 2
 script = ExtResource("12_7xl4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="arm" unique_id=1124704110]
@@ -198,6 +202,7 @@ texture = ExtResource("3_iiw48")
 
 [node name="arm_dmg_proto" type="Label" parent="." unique_id=1744327955]
 unique_name_in_owner = true
+visible = false
 offset_left = 88.02701
 offset_top = 193.42094
 offset_right = 133.02701
@@ -216,6 +221,20 @@ angular_damp = 46.775
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sliderblock" unique_id=1816706316]
 shape = SubResource("RectangleShape2D_75g0j")
+
+[node name="crowd_gear" type="Node2D" parent="." unique_id=305580082]
+unique_name_in_owner = true
+modulate = Color(0.44, 0.44, 0.44, 1)
+position = Vector2(262, 157)
+script = ExtResource("35_f1koc")
+
+[node name="TextureRect" type="TextureRect" parent="crowd_gear" unique_id=1048089557]
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = ExtResource("36_v1mlq")
+stretch_mode = 2
 
 [node name="crowd" type="RigidBody2D" parent="." unique_id=1593320042]
 position = Vector2(309, 258)

@@ -4,6 +4,9 @@ extends RigidBody2D
 
 @export var hit_v_threshold := 5
 @export var lifetime := 1.25
+@export var dmg_number_translate := Vector2(0, -150)
+
+@onready var thescoop = %scoop
 
 var move_detected := false
 
@@ -11,11 +14,17 @@ func  _process(dt):
 	var vlensq = self.linear_velocity.length_squared()
 	if vlensq > hit_v_threshold:
 		if not move_detected:
-			damage_number(-sqrt(vlensq), global_position)
+			if arm_hitting_us():
+				damage_number(-sqrt(vlensq), global_position)
 		move_detected = true
 	else:
 		move_detected = false
 
+func arm_hitting_us():
+	for body in get_colliding_bodies():
+		if body == thescoop:
+			return true
+	return false
 		
 func damage_number(amount: int, pos: Vector2) -> void:
 	# var n := Label.new()
@@ -28,9 +37,8 @@ func damage_number(amount: int, pos: Vector2) -> void:
 
 	var t := create_tween()
 	t.set_parallel(true)
-	var fini := n.position + Vector2(0, -150)
 	(t
-		.tween_property(n, "position", fini, lifetime)
+		.tween_property(n, "position", n.position + dmg_number_translate, lifetime)
 		.set_trans(Tween.TRANS_QUAD)
 		.set_ease(Tween.EASE_OUT))
 	t.tween_property(n, "modulate:a", 0.125, lifetime)
