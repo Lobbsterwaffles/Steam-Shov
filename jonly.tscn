@@ -217,6 +217,11 @@ max_contacts_reported = 4
 angular_damp = 50.563
 script = ExtResource("2_gna47")
 sheave = NodePath("../../w")
+myradius = null
+side = null
+engine_speed = null
+clutch_force = null
+brake_force = null
 clutch_press_curve = SubResource("Curve_pu31i")
 brake_press_curve = SubResource("Curve_xlmbs")
 clutch_release_curve = SubResource("Curve_1wo7n")
@@ -351,9 +356,10 @@ offset_top = 304.71936
 offset_right = 2974.7307
 offset_bottom = 624.3032
 
-[node name="Sprite2D" type="Sprite2D" parent="HUD" unique_id=1943324019]
+[node name="coal_gauge_needle" type="Sprite2D" parent="HUD" unique_id=1943324019]
+unique_name_in_owner = true
 position = Vector2(324.7864, 129.91454)
-scale = Vector2(0.68, 0.68)
+rotation = -0.029670598
 texture = ExtResource("22_pwk5d")
 centered = false
 offset = Vector2(-27.895, -28.185)

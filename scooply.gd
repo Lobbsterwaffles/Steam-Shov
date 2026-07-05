@@ -42,7 +42,8 @@ var j_clutch := 0.0
 var j_brake := 0.0
 var j_total := 0.0
 
-var coal := 100.0
+var coal_capacity := 100.0
+var coal := coal_capacity
 var burning_coal := true
 var efficiency := .1
 
@@ -125,6 +126,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 
 	j_total = j_clutch + j_brake
 
+	# bullshit hack force intended to simulate bottom-heaviness  
 	state.apply_force(Vector2(0, 100), Vector2(0, 40))
 
 	if j_total > 0.0:
@@ -166,6 +168,12 @@ func _draw() -> void:
 	x += 10.0
 	
 
+func update_coal_gauge():
+	const rotation_empty := deg_to_rad(-266.0)
+	const rotation_full := deg_to_rad(-1)
+	# %coal_gauge_needle.rotation = lerp_angle(rotation_empty, rotation_full, coal / coal_capacity)
+	%coal_gauge_needle.rotation = lerpf(rotation_empty, rotation_full, coal / coal_capacity)
+
 func _fuel(dt) -> void:
 	%CoalBar.value = coal
 	print("coal: ", coal)
@@ -178,9 +186,7 @@ func _fuel(dt) -> void:
 	
 	if burning_coal:
 		coal -= dt * 1/efficiency
-	
-	
-	
+		update_coal_gauge()
 	
 	
 		
