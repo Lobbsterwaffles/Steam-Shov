@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://iun3x2orsgdr" path="res://graphics/guyframesiii/iineither.png" id="6_qye30"]
 [ext_resource type="Texture2D" uid="uid://cxpjfwba387uu" path="res://graphics/catma.png" id="8_t3quf"]
 [ext_resource type="Script" uid="uid://diyq2pc5tmsc" path="res://cro2.gd" id="9_7osxe"]
+[ext_resource type="Script" uid="uid://b6pny0wmbqt0t" path="res://arm.gd" id="12_7xl4i"]
 [ext_resource type="Script" uid="uid://fkgyplgl67sj" path="res://dirt.gd" id="13_7osxe"]
 [ext_resource type="Script" uid="uid://s5k4kh6anw86" path="res://door.gd" id="13_cohnp"]
 [ext_resource type="Script" uid="uid://hsvi8bao0mcw" path="res://eyes.gd" id="15_t3quf"]
@@ -77,6 +78,12 @@ size = Vector2(65, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yeuc0"]
 size = Vector2(450, 38.819397)
+
+[sub_resource type="FontVariation" id="FontVariation_mpppr"]
+
+[sub_resource type="Theme" id="Theme_xpitp"]
+default_font = SubResource("FontVariation_mpppr")
+default_font_size = 24
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_75g0j"]
 size = Vector2(20, 44.56736)
@@ -176,6 +183,7 @@ rotation = -0.9599311
 collision_layer = 2
 collision_mask = 3
 lock_rotation = true
+script = ExtResource("12_7xl4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="arm" unique_id=1124704110]
 position = Vector2(0, -2.90979)
@@ -187,6 +195,16 @@ position = Vector2(71.5203, 12.648678)
 rotation = -0.7853982
 scale = Vector2(0.45107174, 0.45107174)
 texture = ExtResource("3_iiw48")
+
+[node name="arm_dmg_proto" type="Label" parent="." unique_id=1744327955]
+unique_name_in_owner = true
+offset_left = 88.02701
+offset_top = 193.42094
+offset_right = 133.02701
+offset_bottom = 227.42094
+theme = SubResource("Theme_xpitp")
+theme_override_colors/font_color = Color(0.68, 0, 0, 1)
+text = "XXX"
 
 [node name="sliderblock" type="RigidBody2D" parent="." unique_id=760491689]
 unique_name_in_owner = true
@@ -256,6 +274,7 @@ collision_mask = 0
 mass = 2.0
 freeze = true
 script = ExtResource("13_cohnp")
+rock_color = Color(0.14, 0.11106667, 0.0532, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="crowd/scoop/door" unique_id=1370933620]
 shape = SubResource("RectangleShape2D_xpitp")

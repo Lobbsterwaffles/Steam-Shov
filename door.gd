@@ -1,12 +1,13 @@
 extends RigidBody2D
 
+@export var rock_color : Color
+
 var pinjoint : PinJoint2D
 
 var carried_area := 0.0
 var area_capacity := 2000.0 # maybe should be derived from actual scoop area?
 
 var dumping := false
-
 
 func _ready() -> void:
 	MachineState.bind(apply_upgrade)
@@ -57,6 +58,12 @@ func polybody(points: PackedVector2Array) -> RigidBody2D:
 	var collision := CollisionPolygon2D.new()
 	collision.polygon = points
 	body.add_child(collision)
+
+
+	var visual := Polygon2D.new()
+	visual.polygon = points
+	body.add_child(visual)
+	visual.color = rock_color
 
 	return body
 

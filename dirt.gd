@@ -4,7 +4,7 @@ var cutter
 var clock = 0
 
 @export var min_bite := 10.0
-
+@export var velocity := Vector2(-1.0, 0.0)
 
 func _ready():
 	body_entered.connect(_enter)
@@ -22,6 +22,8 @@ func _exit(other):
 		return
 	
 func _physics_process(dt):
+	global_position += velocity * dt
+
 	if not cutter:
 		clock = 0
 		return

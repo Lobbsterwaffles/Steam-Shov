@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c0qg7rk4shx8f"]
+
+[ext_resource type="PackedScene" uid="uid://clwspm6qfv6ng" path="res://money_readout.tscn" id="1_wxfep"]
+[ext_resource type="Texture2D" uid="uid://76m2uj5wlwbi" path="res://graphics/UI/plaque.png" id="2_d8bsp"]
+
+[node name="Node2D" type="Node2D" unique_id=655382720]
+
+[node name="cost_readout" parent="." unique_id=1370899640 instance=ExtResource("1_wxfep")]
+
+[node name="plaque" type="TextureRect" parent="." unique_id=1736168181]
+offset_left = -159.0
+offset_top = 43.0
+offset_right = 154.0
+offset_bottom = 112.0
+texture = ExtResource("2_d8bsp")
