@@ -3,7 +3,7 @@ extends RigidBody2D
 var pinjoint : PinJoint2D
 
 var carried_area := 0.0
-var area_capacity := 10000.0 # maybe should be derived from actual scoop area?
+var area_capacity := 2000.0 # maybe should be derived from actual scoop area?
 
 var dumping := false
 

@@ -18,7 +18,7 @@ func despawn(body):
 
 	
 func _process(delta: float) -> void:
-	despawning += delta * 10
+	despawning += delta * 5
 	if despawning >= despawn_max:
 		despawning  = despawn_max
 	while despawning > 0 and not pending_despawn.is_empty():
