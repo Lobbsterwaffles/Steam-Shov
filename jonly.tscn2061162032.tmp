@@ -774,7 +774,6 @@ offset_right = 861.99994
 offset_bottom = 688.0
 
 [node name="play_button" type="Button" parent="intro_screen/panel" unique_id=729876132]
-process_mode = 2
 layout_mode = 0
 offset_left = 390.0
 offset_top = 484.0
@@ -855,4 +854,3 @@ grow_vertical = 0
 [connection signal="pressed" from="Pause" to="." method="pause"]
 [connection signal="pressed" from="help_Screen/TextureRect/close_help" to="." method="closehelp"]
 [connection signal="pressed" from="kill_screen/panel/again_yes" to="." method="restart"]
-[connection signal="pressed" from="intro_screen/panel/play_button" to="." method="new_game"]
