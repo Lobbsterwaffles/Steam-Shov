@@ -5,3 +5,5 @@ extends Marker2D
 func _process(dt):
 	if self.global_position.x < edge.x:
 		print("you won")
+		get_tree().paused = true
+		%victory_screen.show()
