@@ -46,7 +46,7 @@ var j_total := 0.0
 var coal_capacity := 100.0
 var coal := coal_capacity
 var burning_coal := true
-var efficiency := .3
+var efficiency := .1
 
 func _ready() -> void:
 	MachineState.bind(apply_upgrade)

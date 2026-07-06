@@ -6,8 +6,8 @@ static func build_rows() -> Array[Upgrade]:
 	var rows: Array[Upgrade] = []
 	var u: Upgrade
 	var hoist_up_cost := 50.0
-	var bucket_up_cost := 50.0
-	var efficiency_up_cost := 50.0
+	var bucket_up_cost := 100.0
+	var efficiency_up_cost := 100.0
 	var suckdown_up_cost := 50.0
 	
 
