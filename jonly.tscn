@@ -34,6 +34,7 @@
 [ext_resource type="Script" uid="uid://b316wig1vgeww" path="res://end_of_the_world.gd" id="25_bv3ij"]
 [ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="25_cdl7u"]
 [ext_resource type="Texture2D" uid="uid://dw847rp0sfuyr" path="res://graphics/UI/Gauge.png" id="26_gght3"]
+[ext_resource type="Script" uid="uid://dm1go8w6w0r5j" path="res://left_edge.gd" id="26_t32kh"]
 [ext_resource type="Script" uid="uid://cpi4680ouh48b" path="res://store_grid.gd" id="29_dqk33"]
 [ext_resource type="Theme" uid="uid://cg0caupgk0fgu" path="res://ui_theme.tres" id="32_7xl4i"]
 [ext_resource type="Script" uid="uid://cdhvvlo4hvfcf" path="res://cheat.gd" id="32_cdl7u"]
@@ -382,6 +383,19 @@ texture = ExtResource("24_bv3ij")
 [node name="end_of_the_world" type="Marker2D" parent="World" unique_id=621380115]
 position = Vector2(3459, 525)
 script = ExtResource("25_bv3ij")
+
+[node name="left_edge" type="Polygon2D" parent="." unique_id=370960355]
+position = Vector2(78, 613)
+color = Color(1, 1, 1, 0.101960786)
+polygon = PackedVector2Array(0, -700, 0, 400, 400, 400, 400, -700)
+script = ExtResource("26_t32kh")
+
+[node name="Timer" type="Timer" parent="left_edge" unique_id=1628952200]
+wait_time = 2.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="left_edge" unique_id=671932964]
+position = Vector2(433, 51)
 
 [node name="minecart" type="StaticBody2D" parent="." unique_id=1387034368]
 position = Vector2(232, 584)
