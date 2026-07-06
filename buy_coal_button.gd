@@ -19,6 +19,7 @@ func buycoal():
 		_flash_label(%label_coal_nomoney)
 		return
 	%scoop.coal += amount
+	%scoop.update_coal_gauge()
 
 func _flash_label(label: Control) -> void:
 	label.visible = true

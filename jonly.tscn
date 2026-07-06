@@ -599,6 +599,7 @@ offset_left = -0.85469365
 offset_top = 11.111127
 offset_right = 160.14531
 offset_bottom = 71.11114
+focus_mode = 0
 theme = ExtResource("32_7xl4i")
 theme_override_font_sizes/font_size = 25
 theme_override_styles/hover = SubResource("StyleBoxFlat_rngr4")
