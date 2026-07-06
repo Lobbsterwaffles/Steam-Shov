@@ -670,6 +670,20 @@ theme_override_font_sizes/font_size = 14
 text = "crowd"
 metadata/_edit_use_anchors_ = true
 
+[node name="label_store_cant_afford" type="Label" parent="HUD" unique_id=2099561019]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.3250453
+anchor_top = -0.18775523
+anchor_right = -1.8420234
+anchor_bottom = -0.03971438
+theme = ExtResource("32_7xl4i")
+theme_override_font_sizes/font_size = 24
+text = "Not enough money!"
+metadata/_edit_use_anchors_ = true
+
 [node name="Label3" type="Label" parent="HUD" unique_id=193349246]
 layout_mode = 1
 anchors_preset = -1
