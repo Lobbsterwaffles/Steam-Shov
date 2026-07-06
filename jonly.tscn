@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://bkrblqg2pd1v2" path="res://scooply.gd" id="2_gna47"]
 [ext_resource type="Texture2D" uid="uid://bu3fswrx57vtp" path="res://graphics/stickonly.png" id="2_xlmbs"]
 [ext_resource type="Texture2D" uid="uid://dtcucnsf57spj" path="res://graphics/guyframesiii/iiback.png" id="3_1gxae"]
-[ext_resource type="Texture2D" uid="uid://b15vulb5tjrjn" path="res://graphics/boom.png" id="3_iiw48"]
 [ext_resource type="Texture2D" uid="uid://ex7ytbt4gryu" path="res://graphics/bucketonly.png" id="3_pu31i"]
 [ext_resource type="Script" uid="uid://bm8j5xi87nwi7" path="res://guysprite.gd" id="4_cohnp"]
 [ext_resource type="Texture2D" uid="uid://gilcykkrjqhe" path="res://graphics/guyframesiii/iibofa.png" id="4_oeujs"]
@@ -22,7 +21,7 @@
 [ext_resource type="Script" uid="uid://fkgyplgl67sj" path="res://dirt.gd" id="13_7osxe"]
 [ext_resource type="Script" uid="uid://s5k4kh6anw86" path="res://door.gd" id="13_cohnp"]
 [ext_resource type="Script" uid="uid://hsvi8bao0mcw" path="res://eyes.gd" id="15_t3quf"]
-[ext_resource type="Texture2D" uid="uid://de0o37vvkshp7" path="res://graphics/minecart.png" id="18_oeujs"]
+[ext_resource type="Texture2D" uid="uid://cas2sq2mgbqae" path="res://graphics/UI/boom.png" id="15_t32kh"]
 [ext_resource type="Script" uid="uid://byhxrwc4ypulh" path="res://dirt_despawner.gd" id="19_m8a62"]
 [ext_resource type="Texture2D" uid="uid://bqlb1f5g2qprm" path="res://graphics/needle.png" id="22_pwk5d"]
 [ext_resource type="Texture2D" uid="uid://cf4nu21g6fg05" path="res://graphics/UI/HUD.png" id="22_wcugm"]
@@ -35,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://db7546kd64btd" path="res://graphics/UI/money.png" id="25_cdl7u"]
 [ext_resource type="Texture2D" uid="uid://dw847rp0sfuyr" path="res://graphics/UI/Gauge.png" id="26_gght3"]
 [ext_resource type="Script" uid="uid://dm1go8w6w0r5j" path="res://left_edge.gd" id="26_t32kh"]
+[ext_resource type="Texture2D" uid="uid://bjbteyruyobyk" path="res://graphics/UI/minecart.png" id="27_v0ab1"]
 [ext_resource type="Script" uid="uid://cpi4680ouh48b" path="res://store_grid.gd" id="29_dqk33"]
 [ext_resource type="Theme" uid="uid://cg0caupgk0fgu" path="res://ui_theme.tres" id="32_7xl4i"]
 [ext_resource type="Script" uid="uid://cdhvvlo4hvfcf" path="res://cheat.gd" id="32_cdl7u"]
@@ -225,7 +225,7 @@ shape = SubResource("RectangleShape2D_yeuc0")
 position = Vector2(71.5203, 12.648678)
 rotation = -0.7853982
 scale = Vector2(0.45107174, 0.45107174)
-texture = ExtResource("3_iiw48")
+texture = ExtResource("15_t32kh")
 
 [node name="arm_dmg_proto" type="Label" parent="." unique_id=1744327955]
 unique_name_in_owner = true
@@ -406,7 +406,7 @@ collision_mask = 1793
 [node name="Sprite2D" type="Sprite2D" parent="minecart" unique_id=1116190903]
 position = Vector2(173.00003, -318)
 scale = Vector2(0.555, 0.555)
-texture = ExtResource("18_oeujs")
+texture = ExtResource("27_v0ab1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="minecart" unique_id=1918100737]
 polygon = PackedVector2Array(-39, -63, -38, -53, 9, 39, 141, 38, 144, -64, 136, -64, 134, 32, 16, 31)
