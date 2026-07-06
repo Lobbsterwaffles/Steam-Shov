@@ -15,7 +15,9 @@ func  _process(dt):
 	if vlensq > hit_v_threshold:
 		if not move_detected:
 			if arm_hitting_us():
-				damage_number(-sqrt(vlensq), global_position)
+				var dmg = sqrt(vlensq)
+				%money.add(-dmg)
+				damage_number(-dmg, global_position)
 		move_detected = true
 	else:
 		move_detected = false

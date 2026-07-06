@@ -17,7 +17,7 @@ func _draw():
 		draw_string(font, onespos + Vector2(-digit_spacing * i, 0), s[3 - i], HORIZONTAL_ALIGNMENT_CENTER, -1, size, Color.BLACK)
 
 func add(x: int):
-	amount += x
+	amount = maxf(0, x + amount)
 	queue_redraw()
 
 func try_pay_cost(x: int):
