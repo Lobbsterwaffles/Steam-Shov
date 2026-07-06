@@ -598,11 +598,24 @@ text = "Coal is full!"
 
 [node name="buy_coal" type="TextureRect" parent="HUD" unique_id=1168356268]
 layout_mode = 0
-offset_left = -159.82907
-offset_top = 64.957275
-offset_right = -0.17105103
-offset_bottom = 145.2991
+anchor_left = -0.38408434
+anchor_top = 0.31020418
+anchor_right = -0.00041105176
+anchor_bottom = 0.69387746
 texture = ExtResource("22_wcugm")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="HUD/buy_coal" unique_id=1251300477]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.003
+anchor_bottom = 0.97900003
+offset_left = 5.1282043
+offset_top = 16.239319
+offset_right = -4.581421
+offset_bottom = -14.552109
+texture = ExtResource("24_rvxmr")
 expand_mode = 1
 
 [node name="buy_coal_button" type="Button" parent="HUD/buy_coal" unique_id=571206065]
@@ -613,6 +626,8 @@ offset_right = 160.14531
 offset_bottom = 71.11114
 focus_mode = 0
 theme = ExtResource("32_7xl4i")
+theme_override_colors/font_pressed_color = Color(0.5297092, 0.23457578, 0.05616188, 1)
+theme_override_colors/font_hover_color = Color(0.37900934, 0.10874399, 0, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/hover = SubResource("StyleBoxFlat_rngr4")
 text = "BUY COAL $25"
