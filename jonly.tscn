@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bwunvi0226mvx" path="res://graphics/guyframesiii/iifront.png" id="5_n0lup"]
 [ext_resource type="Texture2D" uid="uid://bm8ipdkxamkwi" path="res://graphics/UI/shovebackground1.png" id="5_s4elw"]
 [ext_resource type="Texture2D" uid="uid://iun3x2orsgdr" path="res://graphics/guyframesiii/iineither.png" id="6_qye30"]
+[ext_resource type="Script" uid="uid://bx30hh5vwe2rg" path="res://dirt_kill_area.gd" id="6_v0ab1"]
 [ext_resource type="Texture2D" uid="uid://cxpjfwba387uu" path="res://graphics/catma.png" id="8_t3quf"]
 [ext_resource type="Script" uid="uid://diyq2pc5tmsc" path="res://cro2.gd" id="9_7osxe"]
 [ext_resource type="Script" uid="uid://b6pny0wmbqt0t" path="res://arm.gd" id="12_7xl4i"]
@@ -50,6 +51,9 @@ shader = ExtResource("1_ma3ou")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xi0ly"]
 shader = ExtResource("4_swkqi")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpppr"]
+size = Vector2(1601.5, 354)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x3o0k"]
 animations = [{
@@ -162,6 +166,14 @@ offset_top = -84.0
 offset_right = 1793.7778
 offset_bottom = 925.0
 texture = ExtResource("5_s4elw")
+
+[node name="dirt_kill_area" type="Area2D" parent="." unique_id=883519518]
+position = Vector2(219, 1073)
+script = ExtResource("6_v0ab1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt_kill_area" unique_id=767206471]
+position = Vector2(293, 52)
+shape = SubResource("RectangleShape2D_mpppr")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=730885849]
 position = Vector2(-493, 0)
@@ -1147,9 +1159,6 @@ offset_top = -80.0
 offset_right = 148.5
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="right_edge" type="Area2D" parent="." unique_id=1350417042]
-position = Vector2(757.64764, 1039.4038)
 
 [connection signal="pressed" from="PauseMenu/TextureRect/Unpause" to="." method="unpause"]
 [connection signal="pressed" from="PauseMenu/TextureRect/Restart" to="." method="restart"]

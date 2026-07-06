@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="pulleyge"
+config/name="shovel"
 run/main_scene="uid://dnkoq8b8nhrnw"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"

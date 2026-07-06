@@ -156,11 +156,16 @@ func _bar(label: String, x: float, value: float, color: Color) -> void:
 	draw_string(font, base + Vector2(-label_size.x / 2, 13.0), label)
 
 func _draw() -> void:
+
 	var sl = to_local(sheave.global_position)
 	var qq = sheave.position + Vector2(0,0) # tangent_local
 	draw_circle(sl, myradius, Color.BLACK, false, 2)
 	draw_line(Vector2.ZERO, to_local(sheave.to_global(tangent_local)), Color.BLACK, 2)
 	# draw_line(Vector2.ZERO, to_local(sheave.global_position), Color.BLACK, 2)
+
+	const debug_mode = false
+	if not debug_mode:
+		return
 
 	draw_set_transform(to_local(sheave.global_position), -global_rotation, Vector2.ONE)
 
