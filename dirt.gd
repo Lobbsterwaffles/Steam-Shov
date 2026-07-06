@@ -55,9 +55,13 @@ func _physics_process(dt):
 	var clips = Geometry2D.clip_polygons(%poly.polygon, localcut)
 	if clips.is_empty():
 		return
-	%poly.set_deferred("polygon", clips[0])
-	%visualdirt.set_deferred("polygon", clips[0])
-	queue_redraw()
+	var mrk = %poly.global_transform.affine_inverse() * %edge_marker.global_position
+	for p in clips:
+		if Geometry2D.is_point_in_polygon(mrk, p):
+			%poly.set_deferred("polygon", p)
+			%visualdirt.set_deferred("polygon", p)
+			queue_redraw()
+			return
 
 func _draw():
 	draw_colored_polygon(%poly.polygon, Color.BLACK)

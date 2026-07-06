@@ -6,7 +6,7 @@ func _ready():
 func interval():
 	var xf = %poly.global_transform.affine_inverse() * global_transform
 	var pieces = Geometry2D.clip_polygons(%poly.polygon, xf * polygon)
-	var mrk = xf * $Marker2D.position
+	var mrk = xf * %edge_marker.position
 	for p in pieces:
 		if Geometry2D.is_point_in_polygon(mrk, p):
 			%poly.polygon = p

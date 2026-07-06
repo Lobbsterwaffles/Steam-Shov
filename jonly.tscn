@@ -385,7 +385,7 @@ position = Vector2(3459, 525)
 script = ExtResource("25_bv3ij")
 
 [node name="left_edge" type="Polygon2D" parent="." unique_id=370960355]
-position = Vector2(78, 613)
+position = Vector2(-911, 576)
 color = Color(1, 1, 1, 0.101960786)
 polygon = PackedVector2Array(0, -700, 0, 400, 400, 400, 400, -700)
 script = ExtResource("26_t32kh")
@@ -394,8 +394,9 @@ script = ExtResource("26_t32kh")
 wait_time = 2.0
 autostart = true
 
-[node name="Marker2D" type="Marker2D" parent="left_edge" unique_id=671932964]
-position = Vector2(433, 51)
+[node name="edge_marker" type="Marker2D" parent="left_edge" unique_id=671932964]
+unique_name_in_owner = true
+position = Vector2(600, 268)
 
 [node name="minecart" type="StaticBody2D" parent="." unique_id=1387034368]
 position = Vector2(232, 584)
@@ -956,6 +957,7 @@ horizontal_alignment = 1
 [node name="victory_screen" type="Control" parent="." unique_id=112458587]
 unique_name_in_owner = true
 process_mode = 2
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
