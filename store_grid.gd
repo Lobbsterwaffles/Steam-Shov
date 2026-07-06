@@ -28,8 +28,11 @@ func build_items():
 				var row = my_items[i].row
 				if row == null:
 					return
-				MachineState.apply_upgrade(row)
-				me.populate()
+				if not %money.try_pay_cost(row.cost):
+					_flash_label(%label_store_cant_afford)
+				else:
+					MachineState.apply_upgrade(row)
+					me.populate()
 		)
 
 func populate():
@@ -58,3 +61,10 @@ func populate():
 		else:
 			u.get_node("%button").text = r.id
 			u.get_node("cost_readout/%money").amount = r.cost
+
+
+func _flash_label(label: Control) -> void:
+	label.visible = true
+	await get_tree().create_timer(0.75).timeout
+	label.visible = false
+			
