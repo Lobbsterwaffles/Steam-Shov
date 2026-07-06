@@ -217,7 +217,6 @@ position = Vector2(0, -2.90979)
 shape = SubResource("RectangleShape2D_yeuc0")
 
 [node name="Sprite2D" type="Sprite2D" parent="arm/CollisionShape2D" unique_id=708914638]
-modulate = Color(1, 1, 1, 0.40784314)
 position = Vector2(71.5203, 12.648678)
 rotation = -0.7853982
 scale = Vector2(0.45107174, 0.45107174)
@@ -269,7 +268,6 @@ script = ExtResource("9_7osxe")
 shape = SubResource("RectangleShape2D_dxtb6")
 
 [node name="Sprite2D" type="Sprite2D" parent="crowd/CollisionShape2D" unique_id=832757463]
-modulate = Color(1, 1, 1, 0.24705882)
 position = Vector2(-197.2818, -88.720215)
 rotation = -2.6179938
 scale = Vector2(0.5462722, 0.5462722)
@@ -294,7 +292,6 @@ clutch_release_curve = SubResource("Curve_1wo7n")
 brake_release_curve = SubResource("Curve_t5dwq")
 
 [node name="Sprite2D" type="Sprite2D" parent="crowd/scoop" unique_id=1383584872]
-modulate = Color(1, 1, 1, 0.5176471)
 position = Vector2(-339.74298, 83.011154)
 rotation = -0.5462881
 scale = Vector2(-0.438, 0.438)
@@ -912,6 +909,49 @@ You ran out of Coal...
 Try again?"
 horizontal_alignment = 1
 
+[node name="victory_screen" type="Control" parent="." unique_id=112458587]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("32_7xl4i")
+
+[node name="panel" type="Panel" parent="victory_screen" unique_id=1027396237]
+layout_mode = 0
+offset_left = -118.0
+offset_top = 100.0
+offset_right = 861.99994
+offset_bottom = 688.0
+
+[node name="again_yes" type="Button" parent="victory_screen/panel" unique_id=1987059980]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 484.0
+offset_right = 564.19354
+offset_bottom = 559.0
+theme_override_font_sizes/font_size = 38
+text = "YES
+"
+
+[node name="Label" type="Label" parent="victory_screen/panel" unique_id=1865442449]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -196.0
+offset_top = 93.0
+offset_right = 196.00003
+offset_bottom = 408.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 81
+text = "HOLE: DUG
+All in a day's work
+Dig again?"
+horizontal_alignment = 1
+
 [node name="kill_screen_dirt" type="Control" parent="." unique_id=1706045959]
 unique_name_in_owner = true
 process_mode = 2
@@ -1054,5 +1094,6 @@ grow_vertical = 0
 [connection signal="pressed" from="Pause" to="." method="pause"]
 [connection signal="pressed" from="help_Screen/TextureRect/close_help" to="." method="closehelp"]
 [connection signal="pressed" from="kill_screen_coal/panel/again_yes" to="." method="restart"]
+[connection signal="pressed" from="victory_screen/panel/again_yes" to="." method="restart"]
 [connection signal="pressed" from="kill_screen_dirt/panel/again_yes" to="." method="restart"]
 [connection signal="pressed" from="intro_screen/panel/play_button" to="." method="new_game"]
