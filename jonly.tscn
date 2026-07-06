@@ -122,6 +122,9 @@ point_count = 3
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gna47"]
 size = Vector2(84.627, 85.11789)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t32kh"]
+bg_color = Color(0.30251142, 0.46158487, 0.17238039, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xpitp"]
 size = Vector2(82.823425, 20)
 
@@ -306,6 +309,16 @@ shape = SubResource("RectangleShape2D_gna47")
 unique_name_in_owner = true
 polygon = PackedVector2Array(37.727417, -97.367645, 40.10431, 41.490936, -44.899475, 42.38684, -45.83954, -42.366455, -23.602234, -73.49231)
 
+[node name="bucket_gauge" type="ProgressBar" parent="crowd/scoop" unique_id=561358267]
+unique_name_in_owner = true
+offset_left = -48.34973
+offset_top = 41.132763
+offset_right = 30.650269
+offset_bottom = 134.13275
+rotation = -1.5707964
+theme_override_styles/fill = SubResource("StyleBoxFlat_t32kh")
+show_percentage = false
+
 [node name="door" type="RigidBody2D" parent="crowd/scoop" unique_id=1328115678]
 unique_name_in_owner = true
 position = Vector2(-2.22822, 32.032864)
@@ -396,13 +409,6 @@ shape = SubResource("RectangleShape2D_7msxs")
 [node name="dirtparent" type="Node2D" parent="." unique_id=2089694070]
 unique_name_in_owner = true
 position = Vector2(232, 584)
-
-[node name="bucket_gauge" type="ProgressBar" parent="." unique_id=561358267]
-unique_name_in_owner = true
-offset_left = -320.0
-offset_top = 32.0
-offset_right = -78.0
-offset_bottom = 69.5
 
 [node name="eyes" type="Node2D" parent="." unique_id=1213992888]
 position = Vector2(-29, 216)
