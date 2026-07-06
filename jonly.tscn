@@ -803,6 +803,66 @@ offset_bottom = 77.0
 theme = ExtResource("32_7xl4i")
 text = "MENU"
 
+[node name="intro_screen" type="Control" parent="." unique_id=2015515911]
+unique_name_in_owner = true
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("32_7xl4i")
+
+[node name="panel" type="Panel" parent="intro_screen" unique_id=46189410]
+layout_mode = 0
+offset_left = -118.0
+offset_top = 100.0
+offset_right = 861.99994
+offset_bottom = 688.0
+
+[node name="play_button" type="Button" parent="intro_screen/panel" unique_id=729876132]
+process_mode = 2
+layout_mode = 0
+offset_left = 214.0
+offset_top = 484.0
+offset_right = 388.19354
+offset_bottom = 559.0
+theme_override_font_sizes/font_size = 38
+text = "PLAY
+"
+
+[node name="play_button2" type="Button" parent="intro_screen/panel" unique_id=1227328262]
+process_mode = 2
+layout_mode = 0
+offset_left = 582.0
+offset_top = 484.0
+offset_right = 799.0
+offset_bottom = 559.0
+theme_override_font_sizes/font_size = 38
+text = "HOW TO PLAY
+"
+
+[node name="Label" type="Label" parent="intro_screen/panel" unique_id=79778783]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -464.99997
+offset_top = 9.0
+offset_right = 463.00003
+offset_bottom = 582.0
+grow_horizontal = 2
+text = "The boss man says
+DIG.
+Use the Steam Shovel to dig.
+Dump the dirt in the Railcart to get paid.
+Spend your money in the Company Store.
+
+Don't run out of Coal.
+Don't run into the dirt.
+
+"
+horizontal_alignment = 1
+
 [node name="help_Screen" type="Control" parent="." unique_id=1852025290]
 unique_name_in_owner = true
 visible = false
@@ -1055,56 +1115,6 @@ You ran into the dirt...
 Try again?"
 horizontal_alignment = 1
 
-[node name="intro_screen" type="Control" parent="." unique_id=2015515911]
-unique_name_in_owner = true
-process_mode = 2
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme = ExtResource("32_7xl4i")
-
-[node name="panel" type="Panel" parent="intro_screen" unique_id=46189410]
-layout_mode = 0
-offset_left = -118.0
-offset_top = 100.0
-offset_right = 861.99994
-offset_bottom = 688.0
-
-[node name="play_button" type="Button" parent="intro_screen/panel" unique_id=729876132]
-process_mode = 2
-layout_mode = 0
-offset_left = 390.0
-offset_top = 484.0
-offset_right = 564.19354
-offset_bottom = 559.0
-theme_override_font_sizes/font_size = 38
-text = "PLAY
-"
-
-[node name="Label" type="Label" parent="intro_screen/panel" unique_id=79778783]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -464.99997
-offset_top = 9.0
-offset_right = 463.00003
-offset_bottom = 582.0
-grow_horizontal = 2
-text = "The boss man says
-DIG.
-Use the Steam Shovel to dig.
-Dump the dirt in the Railcart to get paid.
-Spend your money in the Company Store.
-
-Don't run out of Coal.
-Don't run into the dirt.
-
-"
-horizontal_alignment = 1
-
 [node name="cheat" type="Panel" parent="." unique_id=1996473990]
 visible = false
 offset_left = 45.0
@@ -1155,8 +1165,9 @@ position = Vector2(757.64764, 1039.4038)
 [connection signal="pressed" from="PauseMenu/TextureRect/Restart" to="." method="restart"]
 [connection signal="pressed" from="PauseMenu/TextureRect/Help" to="." method="help"]
 [connection signal="pressed" from="Pause" to="." method="pause"]
+[connection signal="pressed" from="intro_screen/panel/play_button" to="." method="new_game"]
+[connection signal="pressed" from="intro_screen/panel/play_button2" to="." method="help"]
 [connection signal="pressed" from="help_Screen/TextureRect/close_help" to="." method="closehelp"]
 [connection signal="pressed" from="kill_screen_coal/panel/again_yes" to="." method="restart"]
 [connection signal="pressed" from="victory_screen/panel/again_yes" to="." method="restart"]
 [connection signal="pressed" from="kill_screen_dirt/panel/again_yes" to="." method="restart"]
-[connection signal="pressed" from="intro_screen/panel/play_button" to="." method="new_game"]
